@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shershaah (2021) – Complete HTML + CSS Showcase</title>
+  <meta name="description" content="All-in-one HTML & CSS project themed 100% on Shershaah (2021): semantic tags, forms, tables, media, grid/flex, animations, clip-path, backgrounds, and more." />
+  <meta property="og:title" content="Shershaah – HTML + CSS Showcase" />
+  <meta property="og:description" content="Pure Shershaah movie context. Includes trailer embed, soundtrack list, awards, forms, grids, animations, and CSS tricks." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+
+  <style>
+    *, *::before, *::after{ box-sizing: border-box; }
+    :root{
+      --bg:#0b0f17; --bg-alt:#0f1624; --text:#eaf0ff; --muted:#8ea0c0; --card:#131b2b; --accent:#18a957; --accent-2:#aeea00; --ring:#60a5fa;
+    }
+    @media (prefers-color-scheme: light){ :root{ --bg:#f7f9fc; --bg-alt:#fff; --text:#0e1220; --muted:#4b5568; --card:#ffffff; } }
+    html, body { height:100%; }
+    body{ margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto; background: radial-gradient(1200px 700px at 10% -10%, #15314a, transparent 60%), radial-gradient(1200px 700px at 110% 10%, #0f2a2a, transparent 60%), var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
+    a{ color:var(--accent-2); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .container{ width:min(1200px, 92%); margin-inline:auto; }
+
+    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ font-family:'Bebas Neue', system-ui; font-size: clamp(26px, 4vw, 44px); letter-spacing:1px; }
+    .navlinks{ display:flex; gap:16px; }
+
+    .hero{ position:relative; min-height: 76vh; display:grid; place-items:center; text-align:center; }
+    .hero-card{ background: rgba(0,0,0,.05); border:1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+    .hero h1{ margin:0 0 8px; font-size: clamp(32px, 6vw, 68px); font-family:'Bebas Neue', sans-serif; letter-spacing: 1px; }
+    .hero p{ margin:0 0 18px; color:var(--muted); }
+    .cta{ display:inline-block; padding:12px 18px; border-radius:12px; background: linear-gradient(135deg, #0b5, #18a957); color:white; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+
+    section{ padding:64px 0; }
+    section h2{ font-family:'Bebas Neue', sans-serif; font-size: clamp(22px, 3vw, 36px); margin:0 0 12px; }
+    .grid{ display:grid; gap:16px; }
+    .grid.cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid.cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+    @media (max-width: 900px){ .grid.cols-2, .grid.cols-3{ grid-template-columns:1fr; } }
+
+    .card{ background: var(--card); border:1px solid rgba(255,255,255,.10); border-radius:14px; padding:16px; }
+    .box-demo{ background: var(--card); padding:20px; margin:10px; border:6px solid #234; outline:4px dashed #9cf; outline-offset:6px; border-image: linear-gradient(45deg, #9cf, #9f6) 1; border-radius:16px; }
+    .fancy{ font-weight:800; text-shadow: 0 2px 0 rgba(0,0,0,.25), 0 14px 40px rgba(0,0,0,.35); filter: drop-shadow(0 10px 20px rgba(0,0,0,.35)); }
+    .tag{ display:inline-block; padding:6px 10px; border-radius:999px; background:#1c2742; border:1px solid rgba(255,255,255,.10); }
+    .two-col{ columns:2; column-gap:24px; }
+    .inline-demo span{ display:inline; background:#203055; padding:4px 6px; }
+    .inline-demo .ib{ display:inline-block; padding:4px 8px; background:#253864; border-radius:6px; }
+    .inline-demo .blk{ display:block; padding:6px; margin-top:8px; background:#1a284b; border-left:4px solid #5aa7ff; }
+    .float-wrap{ background: var(--card); padding:18px; border-radius:14px; }
+    .float-shape{ float:left; width:180px; height:180px; margin:10px 18px 10px 0; background: linear-gradient(135deg,#aeea00,#18a957); border-radius:50%; shape-outside: circle(); shape-margin: 12px; }
+    .clips{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
+    .clip{ height:160px; background: linear-gradient(135deg,#7affd3,#7aa7ff); }
+    .clip.circle{ clip-path: circle(40% at 50% 50%); }
+    .clip.ellipse{ clip-path: ellipse(50% 35% at 50% 50%); }
+    .clip.polygon{ clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    .clip.path{ clip-path: path('M 10 10 H 150 V 100 H 10 Z'); height:80px; background:#7c3aed; margin-top:10px; }
+
+    .bg-grad-text{ background: linear-gradient(120deg, #18a957, #aeea00); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .poster-3d{ perspective: 900px; }
+    .poster-3d .card3d{ transform-style: preserve-3d; transition: transform .55s ease, box-shadow .55s ease; border-radius: 16px; overflow:hidden; box-shadow: 0 10px 40px rgba(0,0,0,.45); background: radial-gradient(80% 80% at 50% 40%, rgba(174,234,0,.15), transparent), linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); height: 220px; display:grid; place-items:center; font-family:'Bebas Neue'; font-size: clamp(28px, 3vw, 40px); letter-spacing:.5px; }
+    .poster-3d:hover .card3d{ transform: rotateY(-14deg) translateZ(20px); box-shadow: 0 20px 80px rgba(0,0,0,.6); }
+    .vis-demo{ visibility:hidden; opacity:0; transition: visibility 0s .3s, opacity .3s; }
+    .vis-demo.show{ visibility:visible; opacity:1; transition-delay:0s; }
+    .flex-demo{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+    .flex-item{ flex:1 1 180px; background: var(--card); padding:16px; border-radius:14px; text-align:center; }
+    .flex-item:nth-child(2){ order:-1; }
+    .grid-demo{ display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto auto; grid-template-areas:'a b' 'a c'; gap:12px; }
+    .grid-a{ grid-area:a; } .grid-b{ grid-area:b; } .grid-c{ grid-area:c; }
+    form{ display:grid; gap:12px; }
+    label{ font-weight:600; }
+    input, select, textarea, button{ padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.15); background: var(--bg-alt); color: var(--text); }
+    input:focus, select:focus, textarea:focus{ outline: 2px solid var(--ring); }
+    fieldset{ border:1px dashed rgba(255,255,255,.25); border-radius:12px; padding:12px; }
+    legend{ padding:0 8px; }
+    .muted{ color:var(--muted); } .mt-2{ margin-top:8px; } .mt-3{ margin-top:12px; } .mt-4{ margin-top:16px; }
+    .pseudo a{ position:relative; padding-bottom:3px; }
+    .pseudo a::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background: currentColor; transform: scaleX(0); transform-origin:left; transition: transform .3s; }
+    .pseudo a:hover::after{ transform: scaleX(1); }
+    .cursor-demo *{ cursor: help; }
+
+    .award{ display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; background:linear-gradient(135deg,#334155,#0b5); border:1px solid rgba(255,255,255,.14); }
+    .medal{ width:10px; height:10px; border-radius:50%; background:#ffd700; box-shadow: 0 0 0 2px rgba(0,0,0,.25); }
+    .glass{ background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 18px; }
+    .ratio{ position:relative; width:100%; padding-bottom:56.25%; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.15); }
+    .ratio iframe, .ratio video{ position:absolute; inset:0; width:100%; height:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">SHERSHAAH</div>
+        <ul class="navlinks" role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#songs">Soundtrack</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#form">Ticket Form</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <h1 class="fancy">Shershaah (2021)</h1>
+        <p class="muted">Directed by <abbr title="Debut in Hindi">Vishnuvardhan</abbr> · Starring <bdi>Sidharth Malhotra</bdi> (Vikram & Vishal Batra) and <bdo dir="rtl">Kiara Advani</bdo> (Dimple Cheema)</p>
+        <div class="award mt-2"><span class="medal"></span>Filmfare 2022: Best Film & Best Director</div>
+        <div class="mt-3"><a class="cta" href="#gallery">Watch Trailer & Stills</a></div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about">
+    <div class="container grid cols-2">
+      <article class="card">
+        <h2>About the Film </h2>
+        <p><strong>Synopsis:</strong> A biographical war drama on Param Vir Chakra awardee Capt. <em>Vikram Batra</em>, call-sign <em>"Shershaah"</em>, covering his 13 JAK Rifles service in the 1999 Kargil War, and his relationship with Dimple Cheema.</p>
+        <h3>Dialog / Taglines </h3>
+<pre>
+"Yeh Dil Maange More!"
+"Either I will come back after hoisting the Tricolor, or I will come back wrapped in it."
+</pre>
+        <h3>Cast (List)</h3>
+        <ul class="two-col">
+          <li>Director: Vishnuvardhan</li>
+          <li>Vikram/Vishal Batra: Sidharth Malhotra</li>
+          <li>Dimple Cheema: Kiara Advani</li>
+          <li>Lt. Col. Y.K. Joshi: Shataf Figar</li>
+          <li>Capt. Sanjeev Jamwal: Shiv Pandit</li>
+          <li>Sunny: Sahil Vaid</li>
+        </ul>
+      </article>
+
+      <aside class="card">
+        <h3>Tech Sheet </h3>
+        <table>
+          <thead>
+            <tr><th>Spec</th><th>Detail</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Resolution</td>
+              <td>1920×1080</td>
+              <td>Full HD</td>
+            </tr>
+            <tr>
+              <td>3840×2160</td>
+              <td>4K UHD</td>
+            </tr>
+            <tr>
+              <td>Audio</td>
+              <td colspan="2">Dolby Atmos / Stereo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-3">Poster </h3>
+        <div class="card" style="background:linear-gradient(135deg,#0a2a3a,#0f3b2d); border:1px dashed rgba(255,255,255,.2);">
+          <img src="https://m.media-amazon.com/images/M/MV5BMjk1NzcwMDUtNDU4ZC00MzlhLTkzZjAtM2MxMTRjZGE0ODdhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg' width='640' height='280'%3E%3Crect width='100%25' height='100%25' fill='%230b1524'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' fill='%23aeea00' font-size='28' font-family='Bebas Neue, Arial'%3ESHERSHAAH POSTER AREA%3C/text%3E%3C/svg%3E" alt="Shershaah Poster" usemap="#poster-map" class="cursor-crosshair" style="height:300px;width:300px;"/>
+          <map name="#poster-map">
+            <area shape="rect" coords="0,0,320,280" href="#songs" alt="Songs" />
+            <area shape="rect" coords="320,0,640,280" href="#gallery" alt="Trailer" />
+          </map>
+          <p class="muted mt-2">Click left half → Soundtrack, right half → Trailer.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="songs">
+    <div class="container grid cols-2">
+      <div class="card">
+        <h2>Soundtrack </h2>
+        <table>
+          <thead>
+            <tr><th>#</th><th>Song</th><th>Composer</th><th>Lyricist</th><th>Singers</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Raataan Lambiyan</td><td>Tanishk Bagchi</td><td>Tanishk Bagchi</td><td>Jubin Nautiyal, Asees Kaur</td></tr>
+            <tr><td>2</td><td>Ranjha</td><td>Jasleen Royal</td><td>Anvita Dutt</td><td>B Praak, Jasleen Royal, Romy</td></tr>
+            <tr><td>3</td><td>Kabhii Tumhhe (Male)</td><td>Javed–Mohsin</td><td>Rashmi Virag</td><td>Darshan Raval</td></tr>
+            <tr><td>4</td><td>Jai Hind Ki Senaa</td><td>Vikram Montrose</td><td>Manoj Muntashir</td><td>Vikram Montrose</td></tr>
+          </tbody>
+        </table>
+        <p class="muted mt-2"><p>
+      </div>
+
+      <div class="glass">
+        <h2>Audio (Royalty‑free demo)</h2>
+        <audio controls>
+          <source src="Raataan Lambiyan Shershaah 128 Kbps.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Official Trailer & Featurettes</h2>
+
+      <div class="card">
+        <h3>Amazon Prime Video – Official Trailer</h3>
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/Q0FTXnefVBA" title="Shershaah Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+
+     
+      <div class="card mt-3">
+        <h3>Splide Carousel </h3>
+        <div id="splide" class="splide" aria-label="Shershaah highlights">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><div class="card">PVC Capt. Vikram Batra's valor at Point 4875 (Kargil) portrayed with intensity.</div></li>
+              <li class="splide__slide"><div class="card">Love story thread with Dimple Cheema adds emotional depth.</div></li>
+              <li class="splide__slide"><div class="card">Best Film & Best Director at 67th Filmfare Awards (2022).</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="container">
+      <div class="card">
+        <h2>Ticket Booking Form</h2>
+        <form id="booking">
+          <div>
+            
+            <!-- https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJ
+ cBcJDR96VLEU2xRGNg/viewform?usp=pp_url&entry.1118756572=Ritika+Rawat
+ &entry.1533425166=ritikarawat.9536@gmail.com&entry.846093128=9536752026&
+ entry.984261338=2&entry.1246629364=2005-05-22&entry.1824789534=00:00&
+ entry.634335646=REGULAR&entry.1264750990=Popcorn&entry.338205517=Veg+Burger+Combo&
+ entry.115767804=Dehradun&entry.1180909818=red&entry.462907755=9 -->
+            <label for="fullname">Full Name</label>
+            <input id="fullname" name="entry.1118756572" type="text" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="entry.1533425166" type="email" placeholder="you@example.com" required />
+          </div>
+          <div>
+            <label for="phone">Phone </label>
+            <input id="phone" name="entry.846093128" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="9876543210" required />
+          </div>
+
+          <div class="grid cols-3">
+            <div>
+              <label for="count">Tickets</label>
+              <input id="count" name="entry.984261338" type="number" min="1" max="10" value="2" required />
+            </div>
+            <div>
+              <label for="date">Date</label>
+              <input id="date" name="entry.1246629364" type="date" required />
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input id="time" name="entry.1824789534" type="time" required />
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Seat Type </legend>
+            <label><input type="radio" name=" entry.634335646" value="regular" checked /> Regular</label>
+            <label><input type="radio" name=" entry.634335646" value="premium" /> Premium</label>
+            <label><input type="radio" name=" entry.634335646" value="vip" /> VIP</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Add-ons </legend>
+            <label><input type="checkbox" name="entry.1264750990" value="popcorn" /> Popcorn</label>
+            <label><input type="checkbox" name="entry.1264750990" value="drink" /> Drink</label>
+            <label><input type="checkbox" name="entry.1264750990" value="3d" /> 3D Glasses</label>
+          </fieldset>
+
+          <div class="grid cols-2">
+            <div>
+              <label for="combo">Food Combo (select + optgroup)</label>
+              <select id="combo" name="entry.338205517">
+                <optgroup label="Veg">
+                  <option>Veg Burger Combo</option>
+                  <option>Paneer Wrap Combo</option>
+                </optgroup>
+                <optgroup label="Non-Veg">
+                  <option>Chicken Burger Combo</option>
+                  <option>Fish & Chips Combo</option>
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <label for="city">City </label>
+              <input id="city" name="entry.115767804" list="cities" placeholder="Start typing..." />
+              <datalist id="cities">
+                <option value="Dehradun"></option>
+                <option value="Delhi"></option>
+                <option value="Mumbai"></option>
+                <option value="Bengaluru"></option>
+              </datalist>
+            </div>
+          </div>
+
+          <div class="grid cols-3">
+            <div>
+              <label for="color">Theme Color</label>
+              <input type="color" id="color" name="entry.1180909818" value="#18a957" />
+            </div>
+            <div>
+              <label for="range">Volume (range)</label>
+              <input type="range" id="range" name="entry.462907755" min="0" max="100" value="50" />
+            </div>
+            <div>
+              <label for="file">Upload Avatar</label>
+              <input type="file" id="file" name="file" accept="image/*" />
+            </div>
+          </div>
+
+          <div class="grid cols-3">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="fakeSubmit">Fake API Submit</button>
+          </div>
+        </form>
+
+        <details class="mt-3">
+          
+          <code>action="https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJ
+ cBcJDR96VLEU2xRGNg/viewformResponse" method="POST"</code> with field names like <code>name="entry.XXXXX"</code>.
+          <div id="apiEnd" class="vis-demo mt-2 card">This is the simulated Google Form End Page (success message).</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" style="padding:64px 0;">
+  <div class="container">
+    <h2>Shershaah Movie Gallery</h2>
+    <p class="muted">Memorable scenes & promotional stills</p>
+    <div class="gallery-flex" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+      
+      <!-- Image 1 -->
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://media5.bollywoodhungama.in/wp-content/uploads/2021/12/Sidharth-Malhotra-and-Kiara-Advani%E2%80%99s-Shershaah-broke-the-clutter-in-2021-by-becoming-most-watched-film-on-Amazon-Prime-Video.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Poster – Sidharth & Kiara</p>
+      </div>
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://images.mid-day.com/images/images/2023/aug/sidharthshershhas_d.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sidharth in uniform</p>
+      </div>
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://w0.peakpx.com/wallpaper/290/660/HD-wallpaper-kiara-advani-nose-shershaah-thumbnail.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Kiara's close-up</p>
+      </div>
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/fa9bb4801e9f07491ed198629ead6e0e0d87bd8550c168052f47dfd7ca3bab86._SX1080_FMjpg_.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Promotional still</p>
+      </div>
+      
+      <!-- Image 5 -->
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://m.media-amazon.com/images/M/MV5BNWEwNjNmOWMtMzBlYy00Nzk1LWI5ZmYtMDc3MzlmMmE5YTJlXkEyXkFqcGc@._V1_.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Dramatic still</p>
+      </div>
+      
+      <!-- Image 6 -->
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://filmfare.wwmindia.com/content/2021/oct/shershaah21633166637.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Filmfare moment</p>
+      </div>
+      
+      <!-- Image 7 -->
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://images.indianexpress.com/2021/08/Shershaah-BTS-photos-660.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Behind the scenes</p>
+      </div>
+      
+      <!-- Image 8 -->
+      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+        <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/08/31/993729-sidharth.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
+        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Close-up: Sidharth</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <footer class="container" style="padding:28px 0; color:var(--muted)">
+    &copy; <span id="year"></span> Shershaah Study Demo · Built for education (movie-only context)
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleBtn = document.getElementById('toggleMsg');
+    const msg = document.getElementById('msg');
+    if(toggleBtn){ toggleBtn.addEventListener('click', () => msg.classList.toggle('show')); }
+    new Swiper('.mySwiper', { loop:true, pagination:{ el: '.swiper-pagination' }, navigation:{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } });
+    new Splide('#splide', { type:'loop', perPage: 2, gap: '1rem', breakpoints:{ 900:{ perPage:1 } } }).mount();
+    const fakeSubmit = document.getElementById('fakeSubmit');
+    const apiEnd = document.getElementById('apiEnd');
+    if(fakeSubmit){ fakeSubmit.addEventListener('click', () => { apiEnd.classList.add('show'); apiEnd.textContent = 'Form submitted! (Simulated Google Form End Page)'; }); }
+  </script>
+</body>
+</html>
