@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shershaah (2021) – Complete HTML + CSS Showcase</title>
-  <meta name="description" content="All-in-one HTML & CSS project themed 100% on Shershaah (2021): semantic tags, forms, tables, media, grid/flex, animations, clip-path, backgrounds, and more." />
-  <meta property="og:title" content="Shershaah – HTML + CSS Showcase" />
-  <meta property="og:description" content="Pure Shershaah movie context. Includes trailer embed, soundtrack list, awards, forms, grids, animations, and CSS tricks." />
+  <title>Patriotic Indian War Films – Complete HTML + CSS Showcase</title>
+  <meta name="description" content="Showcase of Shershaah (2021), Uri: The Surgical Strike (2019), and Border (1997) with semantic HTML, forms, tables, media, grid/flex, animations, and more." />
+  <meta property="og:title" content="Patriotic Indian War Films – HTML + CSS Showcase" />
+  <meta property="og:description" content="Explore Shershaah, Uri, and Border with trailers, soundtracks, galleries, forms, and CSS effects." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="" />
 
@@ -15,94 +15,403 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
 
   <style>
-    *, *::before, *::after{ box-sizing: border-box; }
-    :root{
-      --bg:#0b0f17; --bg-alt:#0f1624; --text:#eaf0ff; --muted:#8ea0c0; --card:#131b2b; --accent:#18a957; --accent-2:#aeea00; --ring:#60a5fa;
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg: #0a1a2f;
+      --bg-alt: #14213d;
+      --text: #f5faff;
+      --muted: #d1e7ff;
+      --card: #1a2b4a;
+      --accent: #ff3d00;
+      --accent-2: #ffd700;
+      --ring: #3b82f6;
+      --shadow: rgba(0, 0, 0, 0.5);
     }
-    @media (prefers-color-scheme: light){ :root{ --bg:#f7f9fc; --bg-alt:#fff; --text:#0e1220; --muted:#4b5568; --card:#ffffff; } }
-    html, body { height:100%; }
-    body{ margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto; background: radial-gradient(1200px 700px at 10% -10%, #15314a, transparent 60%), radial-gradient(1200px 700px at 110% 10%, #0f2a2a, transparent 60%), var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
-    a{ color:var(--accent-2); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    .container{ width:min(1200px, 92%); margin-inline:auto; }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #e6f0fa;
+        --bg-alt: #ffffff;
+        --text: #1a202c;
+        --muted: #2b6cb0;
+        --card: #f7fafc;
+        --accent: #e53e3e;
+        --accent-2: #d69e2e;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto;
+      background: radial-gradient(1200px 700px at 10% -10%, #1e3a8a, transparent 60%), radial-gradient(1200px 700px at 110% 10%, #991b1b, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1200px, 92%); margin-inline: auto; }
 
-    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,0)); }
-    nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-    .brand{ font-family:'Bebas Neue', system-ui; font-size: clamp(26px, 4vw, 44px); letter-spacing:1px; }
-    .navlinks{ display:flex; gap:16px; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { font-family: 'Bebas Neue', system-ui; font-size: clamp(26px, 4vw, 44px); letter-spacing: 1px; color: var(--accent-2); }
+    .navlinks { display: flex; gap: 16px; flex-wrap: wrap; }
+    .navlinks a { transition: color 0.3s ease, transform 0.3s ease; }
+    .navlinks a:hover { color: var(--accent); transform: translateY(-2px); }
 
-    .hero{ position:relative; min-height: 76vh; display:grid; place-items:center; text-align:center; }
-    .hero-card{ background: rgba(0,0,0,.05); border:1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
-    .hero h1{ margin:0 0 8px; font-size: clamp(32px, 6vw, 68px); font-family:'Bebas Neue', sans-serif; letter-spacing: 1px; }
-    .hero p{ margin:0 0 18px; color:var(--muted); }
-    .cta{ display:inline-block; padding:12px 18px; border-radius:12px; background: linear-gradient(135deg, #0b5, #18a957); color:white; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .hero {
+      position: relative;
+      min-height: 76vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat fixed;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-card {
+      background: rgba(0,0,0, 0.9);
+      opacity: 0.7;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 20px 60px var(--shadow);
+      backdrop-filter: blur(5000px);
+      transform: translateZ(0);
+    }
+    .hero h1 { margin: 0 0 8px; font-size: clamp(32px, 6vw, 68px); font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; }
+    .hero p { margin: 0 0 18px; color: var(--muted); }
+    .cta {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 10px 30px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta:hover { transform: translateY(-4px); box-shadow: 0 15px 40px var(--shadow); }
 
-    section{ padding:64px 0; }
-    section h2{ font-family:'Bebas Neue', sans-serif; font-size: clamp(22px, 3vw, 36px); margin:0 0 12px; }
-    .grid{ display:grid; gap:16px; }
-    .grid.cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .grid.cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-    @media (max-width: 900px){ .grid.cols-2, .grid.cols-3{ grid-template-columns:1fr; } }
+    section { padding: 64px 0; }
+    section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 3vw, 36px); margin: 0 0 12px; color: var(--accent-2); }
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 900px) { .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; } }
 
-    .card{ background: var(--card); border:1px solid rgba(255,255,255,.10); border-radius:14px; padding:16px; }
-    .box-demo{ background: var(--card); padding:20px; margin:10px; border:6px solid #234; outline:4px dashed #9cf; outline-offset:6px; border-image: linear-gradient(45deg, #9cf, #9f6) 1; border-radius:16px; }
-    .fancy{ font-weight:800; text-shadow: 0 2px 0 rgba(0,0,0,.25), 0 14px 40px rgba(0,0,0,.35); filter: drop-shadow(0 10px 20px rgba(0,0,0,.35)); }
-    .tag{ display:inline-block; padding:6px 10px; border-radius:999px; background:#1c2742; border:1px solid rgba(255,255,255,.10); }
-    .two-col{ columns:2; column-gap:24px; }
-    .inline-demo span{ display:inline; background:#203055; padding:4px 6px; }
-    .inline-demo .ib{ display:inline-block; padding:4px 8px; background:#253864; border-radius:6px; }
-    .inline-demo .blk{ display:block; padding:6px; margin-top:8px; background:#1a284b; border-left:4px solid #5aa7ff; }
-    .float-wrap{ background: var(--card); padding:18px; border-radius:14px; }
-    .float-shape{ float:left; width:180px; height:180px; margin:10px 18px 10px 0; background: linear-gradient(135deg,#aeea00,#18a957); border-radius:50%; shape-outside: circle(); shape-margin: 12px; }
-    .clips{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
-    .clip{ height:160px; background: linear-gradient(135deg,#7affd3,#7aa7ff); }
-    .clip.circle{ clip-path: circle(40% at 50% 50%); }
-    .clip.ellipse{ clip-path: ellipse(50% 35% at 50% 50%); }
-    .clip.polygon{ clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
-    .clip.path{ clip-path: path('M 10 10 H 150 V 100 H 10 Z'); height:80px; background:#7c3aed; margin-top:10px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px var(--shadow); }
+    .box-demo {
+      background: var(--card);
+      padding: 20px;
+      margin: 10px;
+      border: 6px solid #234;
+      outline: 4px dashed var(--ring);
+      outline-offset: 6px;
+      border-image: linear-gradient(45deg, var(--accent), var(--accent-2)) 1;
+      border-radius: 16px;
+    }
+    .fancy {
+      font-weight: 800;
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3), 0 14px 40px var(--shadow);
+      filter: drop-shadow(0 10px 20px var(--shadow));
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--bg-alt);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 0.3s ease;
+    }
+    .tag:hover { background: var(--accent); color: var(--bg); }
+    .two-col { columns: 2; column-gap: 24px; }
+    .inline-demo span { display: inline; background: var(--bg-alt); padding: 4px 6px; }
+    .inline-demo .ib { display: inline-block; padding: 4px 8px; background: var(--card); border-radius: 6px; }
+    .inline-demo .blk { display: block; padding: 6px; margin-top: 8px; background: var(--bg-alt); border-left: 4px solid var(--ring); }
+    .float-wrap { background: var(--card); padding: 18px; border-radius: 14px; }
+    .float-shape {
+      float: left;
+      width: 180px;
+      height: 180px;
+      margin: 10px 18px 10px 0;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      border-radius: 50%;
+      shape-outside: circle();
+      shape-margin: 12px;
+      transition: transform 0.5s ease;
+    }
+    .float-shape:hover { transform: rotate(360deg); }
+    .clips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .clip { height: 160px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .clip.circle { clip-path: circle(40% at 50% 50%); }
+    .clip.ellipse { clip-path: ellipse(50% 35% at 50% 50%); }
+    .clip.polygon { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    .clip.path { clip-path: path('M 10 10 H 150 V 100 H 10 Z'); height: 80px; background: var(--accent); margin-top: 10px; }
 
-    .bg-grad-text{ background: linear-gradient(120deg, #18a957, #aeea00); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .poster-3d{ perspective: 900px; }
-    .poster-3d .card3d{ transform-style: preserve-3d; transition: transform .55s ease, box-shadow .55s ease; border-radius: 16px; overflow:hidden; box-shadow: 0 10px 40px rgba(0,0,0,.45); background: radial-gradient(80% 80% at 50% 40%, rgba(174,234,0,.15), transparent), linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)); height: 220px; display:grid; place-items:center; font-family:'Bebas Neue'; font-size: clamp(28px, 3vw, 40px); letter-spacing:.5px; }
-    .poster-3d:hover .card3d{ transform: rotateY(-14deg) translateZ(20px); box-shadow: 0 20px 80px rgba(0,0,0,.6); }
-    .vis-demo{ visibility:hidden; opacity:0; transition: visibility 0s .3s, opacity .3s; }
-    .vis-demo.show{ visibility:visible; opacity:1; transition-delay:0s; }
-    .flex-demo{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
-    .flex-item{ flex:1 1 180px; background: var(--card); padding:16px; border-radius:14px; text-align:center; }
-    .flex-item:nth-child(2){ order:-1; }
-    .grid-demo{ display:grid; grid-template-columns:2fr 1fr; grid-template-rows:auto auto; grid-template-areas:'a b' 'a c'; gap:12px; }
-    .grid-a{ grid-area:a; } .grid-b{ grid-area:b; } .grid-c{ grid-area:c; }
-    form{ display:grid; gap:12px; }
-    label{ font-weight:600; }
-    input, select, textarea, button{ padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.15); background: var(--bg-alt); color: var(--text); }
-    input:focus, select:focus, textarea:focus{ outline: 2px solid var(--ring); }
-    fieldset{ border:1px dashed rgba(255,255,255,.25); border-radius:12px; padding:12px; }
-    legend{ padding:0 8px; }
-    .muted{ color:var(--muted); } .mt-2{ margin-top:8px; } .mt-3{ margin-top:12px; } .mt-4{ margin-top:16px; }
-    .pseudo a{ position:relative; padding-bottom:3px; }
-    .pseudo a::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background: currentColor; transform: scaleX(0); transform-origin:left; transition: transform .3s; }
-    .pseudo a:hover::after{ transform: scaleX(1); }
-    .cursor-demo *{ cursor: help; }
+    .bg-grad-text { background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .poster-3d { perspective: 900px; }
+    .poster-3d .card3d {
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease, box-shadow 0.55s ease;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px var(--shadow);
+      background: radial-gradient(80% 80% at 50% 40%, rgba(255, 215, 0, 0.2), transparent), linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+      height: 220px;
+      display: grid;
+      place-items: center;
+      font-family: 'Bebas Neue';
+      font-size: clamp(28px, 3vw, 40px);
+      letter-spacing: 0.5px;
+    }
+    .poster-3d:hover .card3d { transform: rotateY(-14deg) translateZ(20px); box-shadow: 0 20px 80px var(--shadow); }
+    .vis-demo { visibility: hidden; opacity: 0; transition: visibility 0s 0.3s, opacity 0.3s; }
+    .vis-demo.show { visibility: visible; opacity: 1; transition-delay: 0s; }
+    .flex-demo { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .flex-item { flex: 1 1 180px; background: var(--card); padding: 16px; border-radius: 14px; text-align: center; }
+    .flex-item:nth-child(2) { order: -1; }
+    .grid-demo { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; grid-template-areas: 'a b' 'a c'; gap: 12px; }
+    .grid-a { grid-area: a; } .grid-b { grid-area: b; } .grid-c { grid-area: c; }
+    form { display: grid; gap: 12px; }
+    label { font-weight: 600; }
+    input, select, textarea, button {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: var(--bg-alt);
+      color: var(--text);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ring); box-shadow: 0 0 8px var(--ring); }
+    fieldset { border: 1px dashed rgba(255, 255, 255, 0.25); border-radius: 12px; padding: 12px; }
+    legend { padding: 0 8px; }
+    .muted { color: var(--muted); } .mt-2 { margin-top: 8px; } .mt-3 { margin-top: 12px; } .mt-4 { margin-top: 16px; }
+    .pseudo a { position: relative; padding-bottom: 3px; }
+    .pseudo a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--accent-2);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .pseudo a:hover::after { transform: scaleX(1); }
+    .cursor-demo * { cursor: help; }
 
-    .award{ display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; background:linear-gradient(135deg,#334155,#0b5); border:1px solid rgba(255,255,255,.14); }
-    .medal{ width:10px; height:10px; border-radius:50%; background:#ffd700; box-shadow: 0 0 0 2px rgba(0,0,0,.25); }
-    .glass{ background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 18px; }
-    .ratio{ position:relative; width:100%; padding-bottom:56.25%; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.15); }
-    .ratio iframe, .ratio video{ position:absolute; inset:0; width:100%; height:100%; }
+    .award {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .award:hover { transform: scale(1.05); }
+    .medal { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3); }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .ratio { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); }
+    .ratio iframe, .ratio video { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-4px); }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.show { display: flex; }
+    .modal img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px var(--shadow);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .modal-close:hover { transform: rotate(90deg); }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px var(--shadow);
+      border-image: linear-gradient(45deg, var(--accent-2), var(--accent)) 1;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .caption { transition: color 0.3s ease; }
+    .gallery-item:hover .caption { color: var(--accent-2); }
+
+    .splide__slide .card {
+      position: relative;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: linear-gradient(135deg, var(--card), var(--bg-alt));
+    }
+    .splide__slide .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px var(--shadow);
+    }
+    .splide__slide img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: var(--bg);
+    }
+    .splide__slide h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      margin: 0 0 8px;
+      color: var(--accent-2);
+    }
+    .splide__slide p { margin: 0; font-size: 0.95rem; }
+    .splide__arrow {
+      background: var(--accent);
+      border-radius: 50%;
+      padding: 10px;
+      transition: background 0.3s ease;
+    }
+    .splide__arrow:hover { background: var(--accent-2); }
+    .splide__pagination__page.is-active { background: var(--accent-2); }
+
+    /* Updated Table Styling */
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-alt);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px var(--shadow);
+      margin-top: 12px;
+    }
+    .tech-table thead {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: var(--bg);
+    }
+    .tech-table th {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(14px, 2vw, 16px);
+      padding: 12px;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tech-table td {
+      padding: 10px 12px;
+      font-size: clamp(13px, 1.8vw, 14px);
+      color: var(--text);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .tech-table tr {
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .tech-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+    .tech-table td[rowspan] {
+      background: var(--card);
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+    @media (max-width: 600px) {
+      .tech-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .tech-table th, .tech-table td {
+        min-width: 120px;
+        padding: 8px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="brand">SHERSHAAH</div>
+        <div class="brand">PATRIOTIC WAR FILMS</div>
         <ul class="navlinks" role="list">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#songs">Soundtrack</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#shershaah">Shershaah</a></li>
+          <li><a href="#uri">Uri</a></li>
+          <li><a href="#border">Border</a></li>
+          <li><a href="#more-movies">More Movies</a></li>
           <li><a href="#form">Ticket Form</a></li>
-          
         </ul>
       </nav>
     </div>
@@ -111,140 +420,608 @@
   <main id="home" class="hero">
     <div class="container">
       <div class="hero-card">
-        <h1 class="fancy">Shershaah (2021)</h1>
-        <p class="muted">Directed by <abbr title="Debut in Hindi">Vishnuvardhan</abbr> · Starring <bdi>Sidharth Malhotra</bdi> (Vikram & Vishal Batra) and <bdo dir="rtl">Kiara Advani</bdo> (Dimple Cheema)</p>
-        <div class="award mt-2"><span class="medal"></span>Filmfare 2022: Best Film & Best Director</div>
-        <div class="mt-3"><a class="cta" href="#gallery">Watch Trailer & Stills</a></div>
+        <h1 class="fancy">Patriotic Indian War Films</h1>
+        <p class="muted">Explore iconic films like <bdi>Shershaah (2021)</bdi>, <bdi>Uri: The Surgical Strike (2019)</bdi>, and <bdi>Border (1997)</bdi></p>
+        <div class="award mt-2"><span class="medal"></span>Showcasing India's cinematic tributes to bravery</div>
+        <div class="mt-3"><a class="cta" href="#shershaah">Discover Shershaah</a></div>
+        <div class="mt-3"><a class="cta" href="#uri">Discover URI</a></div>
+        <div class="mt-3"><a class="cta" href="#border">Discover Border</a></div>
       </div>
     </div>
   </main>
 
-  <section id="about">
-    <div class="container grid cols-2">
-      <article class="card">
-        <h2>About the Film </h2>
-        <p><strong>Synopsis:</strong> A biographical war drama on Param Vir Chakra awardee Capt. <em>Vikram Batra</em>, call-sign <em>"Shershaah"</em>, covering his 13 JAK Rifles service in the 1999 Kargil War, and his relationship with Dimple Cheema.</p>
-        <h3>Dialog / Taglines </h3>
-<pre>
+  <!-- Shershaah Section -->
+  <section id="shershaah">
+    <div class="container">
+      <h2>Shershaah (2021)</h2>
+      <nav class="navlinks mt-2">
+        <a href="#shershaah-about">About</a>
+        <a href="#shershaah-songs">Soundtrack</a>
+        <a href="#shershaah-gallery">Gallery</a>
+      </nav>
+
+      <div id="shershaah-about" class="grid cols-2 mt-3">
+        <article class="card">
+          <h2>About Shershaah</h2>
+          <p><strong>Synopsis:</strong> A biographical war drama on Param Vir Chakra awardee Capt. <em>Vikram Batra</em>, call-sign <em>"Shershaah"</em>, covering his 13 JAK Rifles service in the 1999 Kargil War, and his relationship with Dimple Cheema.</p>
+          <h3>Dialog / Taglines</h3>
+          <pre>
 "Yeh Dil Maange More!"
 "Either I will come back after hoisting the Tricolor, or I will come back wrapped in it."
-</pre>
-        <h3>Cast (List)</h3>
-        <ul class="two-col">
-          <li>Director: Vishnuvardhan</li>
-          <li>Vikram/Vishal Batra: Sidharth Malhotra</li>
-          <li>Dimple Cheema: Kiara Advani</li>
-          <li>Lt. Col. Y.K. Joshi: Shataf Figar</li>
-          <li>Capt. Sanjeev Jamwal: Shiv Pandit</li>
-          <li>Sunny: Sahil Vaid</li>
-        </ul>
-      </article>
+          </pre>
+          <h3>Cast (List)</h3>
+          <ul class="two-col">
+            <li>Director: Vishnuvardhan</li>
+            <li>Vikram/Vishal Batra: Sidharth Malhotra</li>
+            <li>Dimple Cheema: Kiara Advani</li>
+            <li>Lt. Col. Y.K. Joshi: Shataf Figar</li>
+            <li>Capt. Sanjeev Jamwal: Shiv Pandit</li>
+            <li>Sunny: Sahil Vaid</li>
+          </ul>
+        </article>
 
-      <aside class="card">
-        <h3>Tech Sheet </h3>
-        <table>
-          <thead>
-            <tr><th>Spec</th><th>Detail</th><th>Notes</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="2">Resolution</td>
-              <td>1920×1080</td>
-              <td>Full HD</td>
-            </tr>
-            <tr>
-              <td>3840×2160</td>
-              <td>4K UHD</td>
-            </tr>
-            <tr>
-              <td>Audio</td>
-              <td colspan="2">Dolby Atmos / Stereo</td>
-            </tr>
-          </tbody>
-        </table>
+        <aside class="card">
+          <h3>Tech Sheet</h3>
+          <table class="tech-table" aria-label="Shershaah Technical Specifications">
+            <thead>
+              <tr>
+                <th scope="col">Spec</th>
+                <th scope="col">Detail</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Resolution</td>
+                <td>1920×1080</td>
+                <td>Full HD</td>
+              </tr>
+              <tr>
+                <td>3840×2160</td>
+                <td>4K UHD</td>
+              </tr>
+              <tr>
+                <td>Audio</td>
+                <td colspan="2">Dolby Atmos / Stereo</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <h3 class="mt-3">Poster </h3>
-        <div class="card" style="background:linear-gradient(135deg,#0a2a3a,#0f3b2d); border:1px dashed rgba(255,255,255,.2);">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjk1NzcwMDUtNDU4ZC00MzlhLTkzZjAtM2MxMTRjZGE0ODdhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg' width='640' height='280'%3E%3Crect width='100%25' height='100%25' fill='%230b1524'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' fill='%23aeea00' font-size='28' font-family='Bebas Neue, Arial'%3ESHERSHAAH POSTER AREA%3C/text%3E%3C/svg%3E" alt="Shershaah Poster" usemap="#poster-map" class="cursor-crosshair" style="height:300px;width:300px;"/>
-          <map name="#poster-map">
-            <area shape="rect" coords="0,0,320,280" href="#songs" alt="Songs" />
-            <area shape="rect" coords="320,0,640,280" href="#gallery" alt="Trailer" />
-          </map>
-          <p class="muted mt-2">Click left half → Soundtrack, right half → Trailer.</p>
+          <h3 class="mt-3">Poster</h3>
+          <div class="card" style="background:linear-gradient(135deg,#0a2a3a,#0f3b2d); border:1px dashed rgba(255,255,255,.2);">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjk1NzcwMDUtNDU4ZC00MzlhLTkzZjAtM2MxMTRjZGE0ODdhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg" alt="Shershaah Poster" usemap="#shershaah-poster-map" class="cursor-crosshair" style="height:300px;width:300px;"/>
+            <map name="shershaah-poster-map">
+              <area shape="rect" coords="0,0,320,280" href="#shershaah-songs" alt="Songs" />
+              <area shape="rect" coords="320,0,640,280" href="#shershaah-gallery" alt="Trailer" />
+            </map>
+            <p class="muted mt-2">Click left half → Soundtrack, right half → Trailer.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div id="shershaah-songs" class="grid cols-2 mt-4">
+        <div class="card">
+          <h2>Soundtrack</h2>
+          <table>
+            <thead>
+              <tr><th>#</th><th>Song</th><th>Composer</th><th>Lyricist</th><th>Singers</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Raataan Lambiyan</td>
+                <td>Tanishk Bagchi</td>
+                <td>Tanishk Bagchi</td>
+                <td>Jubin Nautiyal, Asees Kaur</td>
+                <td><a href="https://www.youtube.com/watch?v=gvyUuxdRdR4" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Ranjha</td>
+                <td>Jasleen Royal</td>
+                <td>Anvita Dutt</td>
+                <td>B Praak, Jasleen Royal, Romy</td>
+                <td><a href="https://www.youtube.com/watch?v=V7LwfY5U5WI" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Kabhii Tumhhe (Male)</td>
+                <td>Javed–Mohsin</td>
+                <td>Rashmi Virag</td>
+                <td>Darshan Raval</td>
+                <td><a href="https://www.youtube.com/watch?v=ByIZIKFmHOA" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Jai Hind Ki Senaa</td>
+                <td>Vikram Montrose</td>
+                <td>Manoj Muntashir</td>
+                <td>Vikram Montrose</td>
+                <td><a href="https://www.youtube.com/watch?v=NGhWZi8397k" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted mt-2">Click "Listen" to stream songs on YouTube.</p>
         </div>
-      </aside>
-    </div>
-  </section>
 
-  <section id="songs">
-    <div class="container grid cols-2">
-      <div class="card">
-        <h2>Soundtrack </h2>
-        <table>
-          <thead>
-            <tr><th>#</th><th>Song</th><th>Composer</th><th>Lyricist</th><th>Singers</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Raataan Lambiyan</td><td>Tanishk Bagchi</td><td>Tanishk Bagchi</td><td>Jubin Nautiyal, Asees Kaur</td></tr>
-            <tr><td>2</td><td>Ranjha</td><td>Jasleen Royal</td><td>Anvita Dutt</td><td>B Praak, Jasleen Royal, Romy</td></tr>
-            <tr><td>3</td><td>Kabhii Tumhhe (Male)</td><td>Javed–Mohsin</td><td>Rashmi Virag</td><td>Darshan Raval</td></tr>
-            <tr><td>4</td><td>Jai Hind Ki Senaa</td><td>Vikram Montrose</td><td>Manoj Muntashir</td><td>Vikram Montrose</td></tr>
-          </tbody>
-        </table>
-        <p class="muted mt-2"><p>
-      </div>
-
-      <div class="glass">
-        <h2>Audio (Royalty‑free demo)</h2>
-        <audio controls>
-          <source src="Raataan Lambiyan Shershaah 128 Kbps.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="container">
-      <h2>Official Trailer & Featurettes</h2>
-
-      <div class="card">
-        <h3>Amazon Prime Video – Official Trailer</h3>
-        <div class="ratio">
-          <iframe src="https://www.youtube.com/embed/Q0FTXnefVBA" title="Shershaah Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="glass">
+          <h2>Audio</h2>
+          <audio controls>
+            <source src="Raataan Lambiyan Shershaah 128 Kbps.mp3" type="audio/mpeg" />
+          </audio>
         </div>
       </div>
 
-     
-      <div class="card mt-3">
-        <h3>Splide Carousel </h3>
-        <div id="splide" class="splide" aria-label="Shershaah highlights">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide"><div class="card">PVC Capt. Vikram Batra's valor at Point 4875 (Kargil) portrayed with intensity.</div></li>
-              <li class="splide__slide"><div class="card">Love story thread with Dimple Cheema adds emotional depth.</div></li>
-              <li class="splide__slide"><div class="card">Best Film & Best Director at 67th Filmfare Awards (2022).</div></li>
-            </ul>
+      <div id="shershaah-gallery" class="mt-4">
+        <h2>Official Trailer & Featurettes</h2>
+        <div class="card">
+          <h3>Amazon Prime Video – Official Trailer</h3>
+          <div class="ratio">
+            <iframe src="https://www.youtube.com/embed/Q0FTXnefVBA" title="Shershaah Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <h3>Shershaah Highlights Carousel</h3>
+          <div id="splide-shershaah" class="splide" aria-label="Shershaah highlights">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjk1NzcwMDUtNDU4ZC00MzlhLTkzZjAtM2MxMTRjZGE0ODdhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg" alt="Vikram Batra in action">
+                    <h4>Valor at Point 4875</h4>
+                    <p>PVC Capt. Vikram Batra's bravery during the Kargil War.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://media5.bollywoodhungama.in/wp-content/uploads/2021/12/Sidharth-Malhotra-and-Kiara-Advani%E2%80%99s-Shershaah-broke-the-clutter-in-2021-by-becoming-most-watched-film-on-Amazon-Prime-Video.jpg" alt="Love story">
+                    <h4>Love Story</h4>
+                    <p>The emotional bond between Vikram and Dimple Cheema.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://filmfare.wwmindia.com/content/2021/oct/shershaah21633166637.jpg" alt="Filmfare Awards">
+                    <h4>Filmfare Triumph</h4>
+                    <p>Won Best Film & Best Director at the 67th Filmfare Awards.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-3">Shershaah Movie Gallery</h3>
+        <p class="muted">Memorable scenes & promotional stills</p>
+        <div class="gallery-flex" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://media5.bollywoodhungama.in/wp-content/uploads/2021/12/Sidharth-Malhotra-and-Kiara-Advani%E2%80%99s-Shershaah-broke-the-clutter-in-2021-by-becoming-most-watched-film-on-Amazon-Prime-Video.jpg" alt="Poster – Sidharth & Kiara" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://media5.bollywoodhungama.in/wp-content/uploads/2021/12/Sidharth-Malhotra-and-Kiara-Advani%E2%80%99s-Shershaah-broke-the-clutter-in-2021-by-becoming-most-watched-film-on-Amazon-Prime-Video.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Poster – Sidharth & Kiara</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://images.mid-day.com/images/images/2023/aug/sidharthshershhas_d.jpg" alt="Sidharth in uniform" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.mid-day.com/images/images/2023/aug/sidharthshershhas_d.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sidharth in uniform</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://w0.peakpx.com/wallpaper/290/660/HD-wallpaper-kiara-advani-nose-shershaah-thumbnail.jpg" alt="Kiara's close-up" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://w0.peakpx.com/wallpaper/290/660/HD-wallpaper-kiara-advani-nose-shershaah-thumbnail.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Kiara's close-up</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/fa9bb4801e9f07491ed198629ead6e0e0d87bd8550c168052f47dfd7ca3bab86._SX1080_FMjpg_.jpg" alt="Promotional still" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://m.media-amazon.com/images/S/pv-target-images/fa9bb4801e9f07491ed198629ead6e0e0d87bd8550c168052f47dfd7ca3bab86._SX1080_FMjpg_.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Promotional still</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://m.media-amazon.com/images/M/MV5BNWEwNjNmOWMtMzBlYy00Nzk1LWI5ZmYtMDc3MzlmMmE5YTJlXkEyXkFqcGc@._V1_.jpg" alt="Dramatic still" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://m.media-amazon.com/images/M/MV5BNWEwNjNmOWMtMzBlYy00Nzk1LWI5ZmYtMDc3MzlmMmE5YTJlXkEyXkFqcGc@._V1_.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Dramatic still</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://filmfare.wwmindia.com/content/2021/oct/shershaah21633166637.jpg" alt="Filmfare moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2021/oct/shershaah21633166637.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Filmfare moment</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://images.indianexpress.com/2021/08/Shershaah-BTS-photos-660.jpg" alt="Behind the scenes" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2021/08/Shershaah-BTS-photos-660.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Behind the scenes</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/08/31/993729-sidharth.jpg" alt="Close-up: Sidharth" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/08/31/993729-sidharth.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Close-up: Sidharth</p>
           </div>
         </div>
       </div>
-
-      
     </div>
   </section>
 
+  <!-- Uri Section -->
+  <section id="uri">
+    <div class="container">
+      <h2>Uri: The Surgical Strike (2019)</h2>
+      <nav class="navlinks mt-2">
+        <a href="#uri-about">About</a>
+        <a href="#uri-songs">Soundtrack</a>
+        <a href="#uri-gallery">Gallery</a>
+      </nav>
+
+      <div id="uri-about" class="grid cols-2 mt-3">
+        <article class="card">
+          <h2>About Uri</h2>
+          <p><strong>Synopsis:</strong> A dramatization of the 2016 surgical strikes conducted by the Indian Army in response to the Uri attack, led by Major Vihaan Shergill.</p>
+          <h3>Dialog / Taglines</h3>
+          <pre>
+"How's the Josh? High Sir!"
+"New India, No Fear!"
+          </pre>
+          <h3>Cast (List)</h3>
+          <ul class="two-col">
+            <li>Director: Aditya Dhar</li>
+            <li>Vihaan Shergill: Vicky Kaushal</li>
+            <li>Pallavi Sharma: Yami Gautam</li>
+            <li>Govind Bhardwaj: Paresh Rawal</li>
+            <li>Seerat Kaur: Kirti Kulhari</li>
+            <li>Brian D’Souza: Mohit Raina</li>
+          </ul>
+        </article>
+
+        <aside class="card">
+          <h3>Tech Sheet</h3>
+          <table class="tech-table" aria-label="Uri Technical Specifications">
+            <thead>
+              <tr>
+                <th scope="col">Spec</th>
+                <th scope="col">Detail</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Resolution</td>
+                <td>1920×1080</td>
+                <td>Full HD</td>
+              </tr>
+              <tr>
+                <td>3840×2160</td>
+                <td>4K UHD</td>
+              </tr>
+              <tr>
+                <td>Audio</td>
+                <td colspan="2">Dolby Digital / Stereo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="mt-3">Poster</h3>
+          <div class="card" style="background:linear-gradient(135deg,#0a2a3a,#0f3b2d); border:1px dashed rgba(255,255,255,.2);">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/URI_-_New_poster.jpg" alt="Uri Poster" usemap="#uri-poster-map" class="cursor-crosshair" style="height:300px;width:300px;"/>
+            <map name="uri-poster-map">
+              <area shape="rect" coords="0,0,320,280" href="#uri-songs" alt="Songs" />
+              <area shape="rect" coords="320,0,640,280" href="#uri-gallery" alt="Trailer" />
+            </map>
+            <p class="muted mt-2">Click left half → Soundtrack, right half → Trailer.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div id="uri-songs" class="grid cols-2 mt-4">
+        <div class="card">
+          <h2>Soundtrack</h2>
+          <table>
+            <thead>
+              <tr><th>#</th><th>Song</th><th>Composer</th><th>Lyricist</th><th>Singers</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Challa (Main Lad Jaana)</td>
+                <td>Shashwat Sachdev</td>
+                <td>Kumaar</td>
+                <td>Romy, Vivek Hariharan, Shashwat Sachdev</td>
+                <td><a href="https://www.youtube.com/watch?v=g62J-8nV5FI" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Beh Chala</td>
+                <td>Shashwat Sachdev</td>
+                <td>Abhendra Kumar Upadhyay</td>
+                <td>Yasser Desai, Shashwat Sachdev</td>
+                <td><a href="https://www.youtube.com/watch?v=BC2UlVAEwi4" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Jigra</td>
+                <td>Shashwat Sachdev</td>
+                <td>Kumaar</td>
+                <td>Siddhanth Kaushal</td>
+                <td><a href="https://www.youtube.com/watch?v=2n3iW1V-wIE" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted mt-2">Click "Listen" to stream songs on YouTube.</p>
+        </div>
+
+        <div class="glass">
+          <h2>Audio</h2>
+          <audio controls>
+            <source src="Jagga Jiteya-Downringtone.com (1).mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+
+      <div id="uri-gallery" class="mt-4">
+        <h2>Official Trailer & Featurettes</h2>
+        <div class="card">
+          <h3>Zee Studios – Official Trailer</h3>
+          <div class="ratio">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/kftWq7vAkuQ" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <h3>Uri Highlights Carousel</h3>
+          <div id="splide-uri" class="splide" aria-label="Uri highlights">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-9HR-vKs5SiZTdaxaEq_L1envGcE8JjaLeg&s" alt="Surgical Strike">
+                    <h4>Surgical Strike</h4>
+                    <p>Major Vihaan Shergill leads a covert operation across the LoC.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2019/08/03/Pictures/_5b351ffa-b5b9-11e9-8cbf-78d1c56f2fe2.jpg" alt="Vicky Kaushal">
+                    <h4>Vicky Kaushal's Role</h4>
+                    <p>Intense portrayal of Major Vihaan Shergill.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=com/images?q=tbn:ANd9GcSF6T9AR1lf-ZIb_63Z80Z-kWiXPmDpMdmWCg&s" alt="National Awards">
+                    <h4>National Awards</h4>
+                    <p>Won Best Director & Best Supporting Actor in 2019.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-3">Uri Movie Gallery</h3>
+        <p class="muted">Memorable scenes & promotional stills</p>
+        <div class="gallery-flex" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/URI_-_New_poster.jpg" alt="Uri Poster" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://m.media-amazon.com/images/M/MV5BZmNhYTI0NzctNDM1Mi00NzI0LWFkMTctYzRhOGRmNjY0YTVmXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Uri Poster</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/706b9474134343.5c239806af449.jpg" alt="Vicky Kaushal in action" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2019/01/uri-7591.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Vicky Kaushal in action</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://akamaividz2.zee5.com/image/upload/w_480,h_270,c_scale,f_webp,q_auto:eco/resources/0-0-33204/list/rsz1170x658withlogo9654fe840a3545b2bc393c99b0a680831ad2624ad0a247318ec6c942548d6ccc.jpg" alt="Award moment" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2019/jan/uri21547205476.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Award moment</p>
+          </div>
+           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjZhMzNkMzctNmQwOS00MmM0LWE2NGEtMmZhODZhZTI5ZTE3XkEyXkFqcGc@._V1_.jpg" alt="Vicky Kaushal in action" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2019/01/uri-7591.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Vicky Kaushal in action</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Border Section -->
+  <section id="border">
+    <div class="container">
+      <h2>Border (1997)</h2>
+      <nav class="navlinks mt-2">
+        <a href="#border-about">About</a>
+        <a href="#border-songs">Soundtrack</a>
+        <a href="#border-gallery">Gallery</a>
+      </nav>
+
+      <div id="border-about" class="grid cols-2 mt-3">
+        <article class="card">
+          <h2>About Border</h2>
+          <p><strong>Synopsis:</strong> A depiction of the 1971 Battle of Longewala, where a small battalion of Indian soldiers held off a large Pakistani force.</p>
+          <h3>Dialog / Taglines</h3>
+          <pre>
+"Sandese Aate Hain, Humein Tadpate Hain"
+"Hindustan Zindabad!"
+          </pre>
+          <h3>Cast (List)</h3>
+          <ul class="two-col">
+            <li>Director: J.P. Dutta</li>
+            <li>Bhairon Singh: Suniel Shetty</li>
+            <li>Kuldeep Singh: Sunny Deol</li>
+            <li>Dharamvir: Akshaye Khanna</li>
+            <li>Kuldip Sharma: Jackie Shroff</li>
+            <li>Rani: Tabu</li>
+          </ul>
+        </article>
+
+        <aside class="card">
+          <h3>Tech Sheet</h3>
+          <table class="tech-table" aria-label="Border Technical Specifications">
+            <thead>
+              <tr>
+                <th scope="col">Spec</th>
+                <th scope="col">Detail</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Resolution</td>
+                <td>720×576</td>
+                <td>Standard Definition</td>
+              </tr>
+              <tr>
+                <td>Audio</td>
+                <td colspan="2">Dolby Stereo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="mt-3">Poster</h3>
+          <div class="card" style="background:linear-gradient(135deg,#0a2a3a,#0f3b2d); border:1px dashed rgba(255,255,255,.2);">
+            <img src="https://m.media-amazon.com/images/M/MV5BNWUxZDIwODYtZGY4Ni00ODA2LWI3Y2UtYmYyOTFlOTAwMjdmXkEyXkFqcGc@._V1_.jpg" alt="Border Poster" usemap="#border-poster-map" class="cursor-crosshair" style="height:300px;width:300px;"/>
+            <map name="border-poster-map">
+              <area shape="rect" coords="0,0,320,280" href="#border-songs" alt="Songs" />
+              <area shape="rect" coords="320,0,640,280" href="#border-gallery" alt="Trailer" />
+            </map>
+            <p class="muted mt-2">Click left half → Soundtrack, right half → Trailer.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div id="border-songs" class="grid cols-2 mt-4">
+        <div class="card">
+          <h2>Soundtrack</h2>
+          <table>
+            <thead>
+              <tr><th>#</th><th>Song</th><th>Composer</th><th>Lyricist</th><th>Singers</th><th>Link</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Sandese Aate Hain</td>
+                <td>Anu Malik</td>
+                <td>Javed Akhtar</td>
+                <td>Roop Kumar Rathod, Sonu Nigam</td>
+                <td><a href="https://www.youtube.com/watch?v=yccGxvIydKg" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Mere Dushman Mere Bhai</td>
+                <td>Anu Malik</td>
+                <td>Javed Akhtar</td>
+                <td>Hariharan</td>
+                <td><a href="https://www.youtube.com/watch?v=2k1Y0qJ7o7Q" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Hindustan Hindustan</td>
+                <td>Anu Malik</td>
+                <td>Javed Akhtar</td>
+                <td>Shankar Mahadevan, Sonu Nigam</td>
+                <td><a href="https://www.youtube.com/watch?v=_T-oi1AFnBE" target="_blank" class="pseudo">Listen</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted mt-2">Click "Listen" to stream songs on YouTube.</p>
+        </div>
+
+        <div class="glass">
+          <h2>Audio</h2>
+          <audio controls>
+            <source src="ke-ghar-kab-aaoge-bari-2839.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+
+      <div id="border-gallery" class="mt-4">
+        <h2>Official Trailer & Featurettes</h2>
+        <div class="card">
+          <h3>Official Trailer</h3>
+          <div class="ratio">
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/GbIWRGpx3e8" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="card mt-3">
+          <h3>Border Highlights Carousel</h3>
+          <div id="splide-border" class="splide" aria-label="Border highlights">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/War-Memorial/14.jpeg" alt="Battle of Longewala">
+                    <h4>Battle of Longewala</h4>
+                    <p>Indian soldiers' heroic stand against overwhelming odds.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://assets.telegraphindia.com/telegraph/2024/Jun/1718257421_sunny-deol-border-2.jpg" alt="Sunny Deol">
+                    <h4>Sunny Deol's Role</h4>
+                    <p>Powerful performance as Major Kuldip Singh Chandpuri.</p>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="card">
+                    <img src="https://images.indianexpress.com/2018/11/sunny-deol-kuldip-chandpuri-759.jpg" alt="National Award">
+                    <h4>National Award</h4>
+                    <p>Won Best Film on National Integration in 1998.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-3">Border Movie Gallery</h3>
+        <p class="muted">Memorable scenes & promotional stills</p>
+        <div class="gallery-flex" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://i.ytimg.com/vi/hhIXvcqdh-k/maxresdefault.jpg" alt="Border Poster" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://m.media-amazon.com/images/M/MV5BNTI5MmE5N2UtZjIzYS00YzM4LWIyZTktMmQ5M2VhNzQ0MGY2XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Border Poster</p>
+          </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://i.ytimg.com/vi/pZ0KD-Lsb9w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDXnkmeeXh6WRfR5XGtkSMvAs2Yrg" alt="Sunny Deol in action" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2020/06/border-759.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sunny Deol in action</p>
+          </div>
+           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=com/images?q=tbn:ANd9GcTb1W2B90uB0aLg4WnbuTtLvxZhi-PrNN7RqA&s" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Award Moment</p>
+            </div>
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://images.indianexpress.com/2022/06/border-7593.jpg" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
+            <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">More</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Movies Section -->
+  <section id="more-movies">
+    <div class="container">
+      <h2>More Patriotic War Films</h2>
+      <p class="muted">Explore other iconic Indian war dramas</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Lakshya (2004)</h3>
+          <p><strong>Synopsis:</strong> A coming-of-age story of Karan Shergill, who transforms from an aimless youth to a disciplined soldier during the Kargil War.</p>
+          <div class="award mt-2"><span class="medal"></span>Filmfare 2004: Best Cinematography</div>
+          <div class="poster-3d mt-3">
+            <div class="card3d">
+              <img src="https://pbs.twimg.com/media/CHyR6EPUMAAkDp1.jpg" alt="Lakshya Poster" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+          </div>
+          <p class="muted mt-2">Directed by Farhan Akhtar, starring Hrithik Roshan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticket Form Section -->
   <section id="form">
     <div class="container">
       <div class="card">
         <h2>Ticket Booking Form</h2>
         <form id="booking">
           <div>
-            
-            <!-- https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJ
- cBcJDR96VLEU2xRGNg/viewform?usp=pp_url&entry.1118756572=Ritika+Rawat
- &entry.1533425166=ritikarawat.9536@gmail.com&entry.846093128=9536752026&
- entry.984261338=2&entry.1246629364=2005-05-22&entry.1824789534=00:00&
- entry.634335646=REGULAR&entry.1264750990=Popcorn&entry.338205517=Veg+Burger+Combo&
- entry.115767804=Dehradun&entry.1180909818=red&entry.462907755=9 -->
             <label for="fullname">Full Name</label>
             <input id="fullname" name="entry.1118756572" type="text" placeholder="Your name" required />
           </div>
@@ -253,7 +1030,7 @@
             <input id="email" name="entry.1533425166" type="email" placeholder="you@example.com" required />
           </div>
           <div>
-            <label for="phone">Phone </label>
+            <label for="phone">Phone</label>
             <input id="phone" name="entry.846093128" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="9876543210" required />
           </div>
 
@@ -273,14 +1050,14 @@
           </div>
 
           <fieldset>
-            <legend>Seat Type </legend>
-            <label><input type="radio" name=" entry.634335646" value="regular" checked /> Regular</label>
-            <label><input type="radio" name=" entry.634335646" value="premium" /> Premium</label>
-            <label><input type="radio" name=" entry.634335646" value="vip" /> VIP</label>
+            <legend>Seat Type</legend>
+            <label><input type="radio" name="entry.634335646" value="regular" checked /> Regular</label>
+            <label><input type="radio" name="entry.634335646" value="premium" /> Premium</label>
+            <label><input type="radio" name="entry.634335646" value="vip" /> VIP</label>
           </fieldset>
 
           <fieldset>
-            <legend>Add-ons </legend>
+            <legend>Add-ons</legend>
             <label><input type="checkbox" name="entry.1264750990" value="popcorn" /> Popcorn</label>
             <label><input type="checkbox" name="entry.1264750990" value="drink" /> Drink</label>
             <label><input type="checkbox" name="entry.1264750990" value="3d" /> 3D Glasses</label>
@@ -288,7 +1065,7 @@
 
           <div class="grid cols-2">
             <div>
-              <label for="combo">Food Combo (select + optgroup)</label>
+              <label for="combo">Food Combo</label>
               <select id="combo" name="entry.338205517">
                 <optgroup label="Veg">
                   <option>Veg Burger Combo</option>
@@ -301,7 +1078,7 @@
               </select>
             </div>
             <div>
-              <label for="city">City </label>
+              <label for="city">City</label>
               <input id="city" name="entry.115767804" list="cities" placeholder="Start typing..." />
               <datalist id="cities">
                 <option value="Dehradun"></option>
@@ -315,103 +1092,55 @@
           <div class="grid cols-3">
             <div>
               <label for="color">Theme Color</label>
-              <input type="color" id="color" name="entry.1180909818" value="#18a957" />
+              <input type="color" id="color" name="entry.1180909818" value="#ff3d00" />
             </div>
             <div>
-              <label for="range">Volume (range)</label>
-              <input type="range" id="range" name="entry.462907755" min="0" max="100" value="50" />
+              <label for="movie">Select Movie</label>
+              <select id="movie" name="entry.192837465" required>
+                <option value="" disabled selected>Select a movie</option>
+                <option value="Shershaah">Shershaah (2021)</option>
+                <option value="Uri">Uri: The Surgical Strike (2019)</option>
+                <option value="Border">Border (1997)</option>
+                <option value="Lakshya">Lakshya (2004)</option>
+              </select>
             </div>
             <div>
-              <label for="file">Upload Avatar</label>
-              <input type="file" id="file" name="file" accept="image/*" />
+              <label for="theater">Theater</label>
+              <input id="theater" name="entry.987654321" type="text" placeholder="E.g., PVR Cinemas" required />
             </div>
           </div>
 
-          <div class="grid cols-3">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-            <button type="button" id="fakeSubmit">Fake API Submit</button>
+          <div>
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="entry.456789123" rows="4" placeholder="Any special requests or comments"></textarea>
           </div>
+
+          <button type="submit" class="cta">Book Tickets</button>
         </form>
-
         <details class="mt-3">
-          
-          <code>action="https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJ
- cBcJDR96VLEU2xRGNg/viewformResponse" method="POST"</code> with field names like <code>name="entry.XXXXX"</code>.
+          <summary>Form Submission Info</summary>
+          <code>action="https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJcBcJDR96VLEU2xRGNg/viewformResponse" method="POST"</code> with field names like <code>name="entry.XXXXX"</code>.
           <div id="apiEnd" class="vis-demo mt-2 card">This is the simulated Google Form End Page (success message).</div>
         </details>
       </div>
     </div>
   </section>
 
-  <section id="gallery" style="padding:64px 0;">
-  <div class="container">
-    <h2>Shershaah Movie Gallery</h2>
-    <p class="muted">Memorable scenes & promotional stills</p>
-    <div class="gallery-flex" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-      
-      <!-- Image 1 -->
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://media5.bollywoodhungama.in/wp-content/uploads/2021/12/Sidharth-Malhotra-and-Kiara-Advani%E2%80%99s-Shershaah-broke-the-clutter-in-2021-by-becoming-most-watched-film-on-Amazon-Prime-Video.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Poster – Sidharth & Kiara</p>
-      </div>
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://images.mid-day.com/images/images/2023/aug/sidharthshershhas_d.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sidharth in uniform</p>
-      </div>
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://w0.peakpx.com/wallpaper/290/660/HD-wallpaper-kiara-advani-nose-shershaah-thumbnail.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Kiara's close-up</p>
-      </div>
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://m.media-amazon.com/images/S/pv-target-images/fa9bb4801e9f07491ed198629ead6e0e0d87bd8550c168052f47dfd7ca3bab86._SX1080_FMjpg_.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Promotional still</p>
-      </div>
-      
-      <!-- Image 5 -->
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://m.media-amazon.com/images/M/MV5BNWEwNjNmOWMtMzBlYy00Nzk1LWI5ZmYtMDc3MzlmMmE5YTJlXkEyXkFqcGc@._V1_.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Dramatic still</p>
-      </div>
-      
-      <!-- Image 6 -->
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://filmfare.wwmindia.com/content/2021/oct/shershaah21633166637.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Filmfare moment</p>
-      </div>
-      
-      <!-- Image 7 -->
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://images.indianexpress.com/2021/08/Shershaah-BTS-photos-660.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Behind the scenes</p>
-      </div>
-      
-      <!-- Image 8 -->
-      <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-        <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/08/31/993729-sidharth.jpg" alt="" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#aeea00,#18a957) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:help;">
-        <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Close-up: Sidharth</p>
-      </div>
-
-    </div>
+  <!-- Modal for Image Preview -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img src="" alt="Modal Image">
   </div>
-</section>
 
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTop" title="Back to Top">↑</a>
 
   <footer class="container" style="padding:28px 0; color:var(--muted)">
-    &copy; <span id="year"></span> Shershaah Study Demo · Built for education (movie-only context)
+    &copy; <span id="year"></span> Patriotic War Films Study Demo
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggleBtn = document.getElementById('toggleMsg');
-    const msg = document.getElementById('msg');
-    if(toggleBtn){ toggleBtn.addEventListener('click', () => msg.classList.toggle('show')); }
-    new Swiper('.mySwiper', { loop:true, pagination:{ el: '.swiper-pagination' }, navigation:{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } });
-    new Splide('#splide', { type:'loop', perPage: 2, gap: '1rem', breakpoints:{ 900:{ perPage:1 } } }).mount();
-    const fakeSubmit = document.getElementById('fakeSubmit');
-    const apiEnd = document.getElementById('apiEnd');
-    if(fakeSubmit){ fakeSubmit.addEventListener('click', () => { apiEnd.classList.add('show'); apiEnd.textContent = 'Form submitted! (Simulated Google Form End Page)'; }); }
-  </script>
+  
 </body>
 </html>
