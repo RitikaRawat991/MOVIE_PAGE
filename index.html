@@ -1,3 +1,4 @@
+```html:disable-run
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -346,57 +347,187 @@
     .splide__arrow:hover { background: var(--accent-2); }
     .splide__pagination__page.is-active { background: var(--accent-2); }
 
-    /* Updated Table Styling */
-    .tech-table {
-      width: 100%;
-      border-collapse: collapse;
+    /* Form Enhancements */
+    .form-group {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      margin-bottom: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-group:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+    .form-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
       background: var(--bg-alt);
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px var(--shadow);
-      margin-top: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .tech-table thead {
+    .input-wrapper:focus-within {
+      border-color: var(--ring);
+      box-shadow: 0 0 8px var(--ring);
+    }
+    .input-icon {
+      padding: 0 12px;
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+    input, select, textarea {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 12px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+    }
+    .radio-label, .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      background: var(--card);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .radio-label:hover, .checkbox-label:hover {
+      background: var(--bg-alt);
+      transform: translateY(-2px);
+    }
+    .radio-label input, .checkbox-label input {
+      margin: 0;
+    }
+    .error-message {
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-top: 4px;
+      display: block;
+      min-height: 20px;
+    }
+    .progress-bar {
+      height: 6px;
+      background: var(--bg-alt);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      transition: width 0.5s ease;
+    }
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      border: none;
+    }
+    .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: var(--bg);
     }
-    .tech-table th {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(14px, 2vw, 16px);
-      padding: 12px;
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .tech-table td {
-      padding: 10px 12px;
-      font-size: clamp(13px, 1.8vw, 14px);
+    .btn-secondary {
+      background: var(--bg-alt);
       color: var(--text);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .tech-table tr {
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .tech-table tr:hover {
-      background: rgba(255, 255, 255, 0.05);
-      transform: translateY(-2px);
-    }
-    .tech-table td[rowspan] {
+    .btn-tertiary {
       background: var(--card);
-      font-weight: 600;
       color: var(--accent-2);
+      border: 1px dashed var(--ring);
     }
-    @media (max-width: 600px) {
-      .tech-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .tech-table th, .tech-table td {
-        min-width: 120px;
-        padding: 8px;
-        font-size: 12px;
-      }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Confirmation Modal */
+    .confirmation-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 101;
+      align-items: center;
+      justify-content: center;
+    }
+    .confirmation-modal.show {
+      display: flex;
+    }
+    .confirmation-content {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px var(--shadow);
+      position: relative;
+      animation: slideIn 0.5s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .confirmation-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 24px;
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .confirmation-close:hover {
+      transform: rotate(90deg);
+    }
+    .confirmation-content h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-2);
+      margin: 0 0 16px;
+    }
+    .confirmation-content p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+    .confirmation-content .btn {
+      display: inline-block;
+      width: auto;
     }
   </style>
 </head>
@@ -462,13 +593,9 @@
 
         <aside class="card">
           <h3>Tech Sheet</h3>
-          <table class="tech-table" aria-label="Shershaah Technical Specifications">
+          <table>
             <thead>
-              <tr>
-                <th scope="col">Spec</th>
-                <th scope="col">Detail</th>
-                <th scope="col">Notes</th>
-              </tr>
+              <tr><th>Spec</th><th>Detail</th><th>Notes</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -664,13 +791,9 @@
 
         <aside class="card">
           <h3>Tech Sheet</h3>
-          <table class="tech-table" aria-label="Uri Technical Specifications">
+          <table>
             <thead>
-              <tr>
-                <th scope="col">Spec</th>
-                <th scope="col">Detail</th>
-                <th scope="col">Notes</th>
-              </tr>
+              <tr><th>Spec</th><th>Detail</th><th>Notes</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -751,12 +874,7 @@
         <div class="card">
           <h3>Zee Studios – Official Trailer</h3>
           <div class="ratio">
-            <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/kftWq7vAkuQ" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kftWq7vAkuQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -781,7 +899,7 @@
                 </li>
                 <li class="splide__slide">
                   <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=com/images?q=tbn:ANd9GcSF6T9AR1lf-ZIb_63Z80Z-kWiXPmDpMdmWCg&s" alt="National Awards">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF6T9AR1lf-ZIb_63Z80Z-kWiXPmDpMdmWCg&s" alt="National Awards">
                     <h4>National Awards</h4>
                     <p>Won Best Director & Best Supporting Actor in 2019.</p>
                   </div>
@@ -806,7 +924,7 @@
             <img src="https://akamaividz2.zee5.com/image/upload/w_480,h_270,c_scale,f_webp,q_auto:eco/resources/0-0-33204/list/rsz1170x658withlogo9654fe840a3545b2bc393c99b0a680831ad2624ad0a247318ec6c942548d6ccc.jpg" alt="Award moment" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2019/jan/uri21547205476.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Award moment</p>
           </div>
-           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
             <img src="https://m.media-amazon.com/images/M/MV5BMjZhMzNkMzctNmQwOS00MmM0LWE2NGEtMmZhODZhZTI5ZTE3XkEyXkFqcGc@._V1_.jpg" alt="Vicky Kaushal in action" style="width:100%; height:250px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2019/01/uri-7591.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Vicky Kaushal in action</p>
           </div>
@@ -847,13 +965,9 @@
 
         <aside class="card">
           <h3>Tech Sheet</h3>
-          <table class="tech-table" aria-label="Border Technical Specifications">
+          <table>
             <thead>
-              <tr>
-                <th scope="col">Spec</th>
-                <th scope="col">Detail</th>
-                <th scope="col">Notes</th>
-              </tr>
+              <tr><th>Spec</th><th>Detail</th><th>Notes</th></tr>
             </thead>
             <tbody>
               <tr>
@@ -930,12 +1044,7 @@
         <div class="card">
           <h3>Official Trailer</h3>
           <div class="ratio">
-            <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/GbIWRGpx3e8" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GbIWRGpx3e8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -981,10 +1090,10 @@
             <img src="https://i.ytimg.com/vi/pZ0KD-Lsb9w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDXnkmeeXh6WRfR5XGtkSMvAs2Yrg" alt="Sunny Deol in action" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://images.indianexpress.com/2020/06/border-759.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sunny Deol in action</p>
           </div>
-           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=com/images?q=tbn:ANd9GcTb1W2B90uB0aLg4WnbuTtLvxZhi-PrNN7RqA&s" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
+          <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=TB1W2B90uB0aLg4WnbuTtLvxZhi-PrNN7RqA&s" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Award Moment</p>
-            </div>
+          </div>
           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
             <img src="https://images.indianexpress.com/2022/06/border-7593.jpg" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">More</p>
@@ -1015,132 +1124,252 @@
     </div>
   </section>
 
-  <!-- Ticket Form Section -->
-  <section id="form">
-    <div class="container">
-      <div class="card">
-        <h2>Ticket Booking Form</h2>
-        <form id="booking">
-          <div>
-            <label for="fullname">Full Name</label>
-            <input id="fullname" name="entry.1118756572" type="text" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="entry.1533425166" type="email" placeholder="you@example.com" required />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" name="entry.846093128" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="9876543210" required />
-          </div>
-
-          <div class="grid cols-3">
-            <div>
-              <label for="count">Tickets</label>
-              <input id="count" name="entry.984261338" type="number" min="1" max="10" value="2" required />
-            </div>
-            <div>
-              <label for="date">Date</label>
-              <input id="date" name="entry.1246629364" type="date" required />
-            </div>
-            <div>
-              <label for="time">Time</label>
-              <input id="time" name="entry.1824789534" type="time" required />
-            </div>
-          </div>
-
-          <fieldset>
-            <legend>Seat Type</legend>
-            <label><input type="radio" name="entry.634335646" value="regular" checked /> Regular</label>
-            <label><input type="radio" name="entry.634335646" value="premium" /> Premium</label>
-            <label><input type="radio" name="entry.634335646" value="vip" /> VIP</label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Add-ons</legend>
-            <label><input type="checkbox" name="entry.1264750990" value="popcorn" /> Popcorn</label>
-            <label><input type="checkbox" name="entry.1264750990" value="drink" /> Drink</label>
-            <label><input type="checkbox" name="entry.1264750990" value="3d" /> 3D Glasses</label>
-          </fieldset>
-
-          <div class="grid cols-2">
-            <div>
-              <label for="combo">Food Combo</label>
-              <select id="combo" name="entry.338205517">
-                <optgroup label="Veg">
-                  <option>Veg Burger Combo</option>
-                  <option>Paneer Wrap Combo</option>
-                </optgroup>
-                <optgroup label="Non-Veg">
-                  <option>Chicken Burger Combo</option>
-                  <option>Fish & Chips Combo</option>
-                </optgroup>
-              </select>
-            </div>
-            <div>
-              <label for="city">City</label>
-              <input id="city" name="entry.115767804" list="cities" placeholder="Start typing..." />
-              <datalist id="cities">
-                <option value="Dehradun"></option>
-                <option value="Delhi"></option>
-                <option value="Mumbai"></option>
-                <option value="Bengaluru"></option>
-              </datalist>
-            </div>
-          </div>
-
-          <div class="grid cols-3">
-            <div>
-              <label for="color">Theme Color</label>
-              <input type="color" id="color" name="entry.1180909818" value="#ff3d00" />
-            </div>
-            <div>
-              <label for="movie">Select Movie</label>
-              <select id="movie" name="entry.192837465" required>
-                <option value="" disabled selected>Select a movie</option>
-                <option value="Shershaah">Shershaah (2021)</option>
-                <option value="Uri">Uri: The Surgical Strike (2019)</option>
-                <option value="Border">Border (1997)</option>
-                <option value="Lakshya">Lakshya (2004)</option>
-              </select>
-            </div>
-            <div>
-              <label for="theater">Theater</label>
-              <input id="theater" name="entry.987654321" type="text" placeholder="E.g., PVR Cinemas" required />
-            </div>
-          </div>
-
-          <div>
-            <label for="comments">Additional Comments</label>
-            <textarea id="comments" name="entry.456789123" rows="4" placeholder="Any special requests or comments"></textarea>
-          </div>
-
-          <button type="submit" class="cta">Book Tickets</button>
-        </form>
-        <details class="mt-3">
-          <summary>Form Submission Info</summary>
-          <code>action="https://docs.google.com/forms/d/e/1FAIpQLSdKZiqB0viu4NWxfaYHrmsgktQOk7BJcBcJDR96VLEU2xRGNg/viewformResponse" method="POST"</code> with field names like <code>name="entry.XXXXX"</code>.
-          <div id="apiEnd" class="vis-demo mt-2 card">This is the simulated Google Form End Page (success message).</div>
-        </details>
-      </div>
+<!-- Ticket Form Section (Continued) -->
+<fieldset class="form-group">
+  <legend class="fancy">Personal Details</legend>
+  <div class="input-group">
+    <label for="name" class="form-label">Full Name</label>
+    <div class="input-wrapper">
+      <span class="input-icon">👤</span>
+      <input type="text" id="name" name="entry.1234567890" placeholder="Enter your name" required />
     </div>
-  </section>
-
-  <!-- Modal for Image Preview -->
-  <div class="modal" id="imageModal">
-    <span class="modal-close">&times;</span>
-    <img src="" alt="Modal Image">
+    <span class="error-message" id="name-error"></span>
   </div>
+  <div class="input-group">
+    <label for="email" class="form-label">Email Address</label>
+    <div class="input-wrapper">
+      <span class="input-icon">📧</span>
+      <input type="email" id="email" name="entry.987654321" placeholder="Enter your email" required />
+    </div>
+    <span class="error-message" id="email-error"></span>
+  </div>
+  <div class="input-group">
+    <label for="phone" class="form-label">Phone Number</label>
+    <div class="input-wrapper">
+      <span class="input-icon">📱</span>
+      <input type="tel" id="phone" name="entry.456789123" placeholder="Enter your phone number" pattern="[0-9]{10}" />
+    </div>
+    <span class="error-message" id="phone-error"></span>
+  </div>
+</fieldset>
 
-  <!-- Back to Top Button -->
-  <a href="#home" class="back-to-top" id="backToTop" title="Back to Top">↑</a>
+<fieldset class="form-group">
+  <legend class="fancy">Movie Selection</legend>
+  <div class="input-group">
+    <label for="movie" class="form-label">Choose a Movie</label>
+    <div class="input-wrapper">
+      <span class="input-icon">🎬</span>
+      <select id="movie" name="entry.1122334455" required>
+        <option value="" disabled selected>Select a movie</option>
+        <option value="Shershaah">Shershaah (2021)</option>
+        <option value="Uri">Uri: The Surgical Strike (2019)</option>
+        <option value="Border">Border (1997)</option>
+        <option value="Lakshya">Lakshya (2004)</option>
+      </select>
+    </div>
+    <span class="error-message" id="movie-error"></span>
+  </div>
+  <div class="input-group">
+    <label class="form-label">Ticket Type</label>
+    <div class="radio-label">
+      <input type="radio" id="standard" name="entry.6677889900" value="Standard" required />
+      <label for="standard">Standard</label>
+    </div>
+    <div class="radio-label">
+      <input type="radio" id="premium" name="entry.6677889900" value="Premium" />
+      <label for="premium">Premium</label>
+    </div>
+    <span class="error-message" id="ticket-error"></span>
+  </div>
+</fieldset>
 
-  <footer class="container" style="padding:28px 0; color:var(--muted)">
-    &copy; <span id="year"></span> Patriotic War Films Study Demo
-  </footer>
+<fieldset class="form-group">
+  <legend class="fancy">Additional Preferences</legend>
+  <div class="input-group">
+    <label for="seats" class="form-label">Number of Seats</label>
+    <div class="input-wrapper">
+      <span class="input-icon">💺</span>
+      <input type="number" id="seats" name="entry.2233445566" min="1" max="10" placeholder="1-10" required />
+    </div>
+    <span class="error-message" id="seats-error"></span>
+  </div>
+  <div class="input-group">
+    <label for="comments" class="form-label">Special Requests</label>
+    <textarea id="comments" name="entry.3344556677" placeholder="Any special requests (e.g., accessibility needs)"></textarea>
+  </div>
+</fieldset>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  
+<div class="form-actions">
+  <button type="submit" class="btn btn-primary">Book Tickets</button>
+  <button type="reset" class="btn btn-secondary">Reset Form</button>
+</div>
+</form>
+
+<!-- Confirmation Modal -->
+<div class="confirmation-modal" id="confirmation-modal">
+  <div class="confirmation-content">
+    <span class="confirmation-close" id="confirmation-close">&times;</span>
+    <h3>Booking Confirmed!</h3>
+    <p>Your tickets have been reserved successfully. You'll receive a confirmation email with details shortly.</p>
+    <button class="btn btn-primary" id="confirmation-ok">OK</button>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modal for Gallery Images -->
+<div class="modal" id="image-modal">
+  <span class="modal-close" id="modal-close">&times;</span>
+  <img id="modal-image" src="" alt="Enlarged Image" />
+</div>
+
+<!-- Back to Top Button -->
+<a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 19V5m-7 7l7-7 7 7" />
+  </svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  // Initialize Splide carousels
+  document.addEventListener('DOMContentLoaded', () => {
+    new Splide('#splide-shershaah', {
+      type: 'loop',
+      perPage: 2,
+      gap: '1rem',
+      breakpoints: { 900: { perPage: 1 } }
+    }).mount();
+    new Splide('#splide-uri', {
+      type: 'loop',
+      perPage: 2,
+      gap: '1rem',
+      breakpoints: { 900: { perPage: 1 } }
+    }).mount();
+    new Splide('#splide-border', {
+      type: 'loop',
+      perPage: 2,
+      gap: '1rem',
+      breakpoints: { 900: { perPage: 1 } }
+    }).mount();
+  });
+
+  // Form Validation and Progress Bar
+  const form = document.getElementById('booking');
+  const progressFill = document.querySelector('.progress-fill');
+  const confirmationModal = document.getElementById('confirmation-modal');
+  const confirmationClose = document.getElementById('confirmation-close');
+  const confirmationOk = document.getElementById('confirmation-ok');
+
+  const fields = ['name', 'email', 'phone', 'movie', 'seats'];
+  const ticketType = document.querySelectorAll('input[name="entry.6677889900"]');
+
+  function validateField(field) {
+    const input = document.getElementById(field);
+    const error = document.getElementById(`${field}-error`);
+    let valid = true;
+
+    if (field === 'name') {
+      valid = input.value.trim().length >= 2;
+      error.textContent = valid ? '' : 'Name must be at least 2 characters.';
+    } else if (field === 'email') {
+      valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+      error.textContent = valid ? '' : 'Please enter a valid email.';
+    } else if (field === 'phone') {
+      valid = input.value === '' || /^[0-9]{10}$/.test(input.value);
+      error.textContent = valid ? '' : 'Phone number must be 10 digits.';
+    } else if (field === 'movie') {
+      valid = input.value !== '';
+      error.textContent = valid ? '' : 'Please select a movie.';
+    } else if (field === 'seats') {
+      valid = input.value >= 1 && input.value <= 10;
+      error.textContent = valid ? '' : 'Seats must be between 1 and 10.';
+    }
+
+    return valid;
+  }
+
+  function updateProgress() {
+    const totalFields = fields.length + 1; // Include ticket type
+    let filledFields = 0;
+
+    fields.forEach(field => {
+      const input = document.getElementById(field);
+      if (field === 'phone' && input.value === '') return; // Optional
+      if (validateField(field)) filledFields++;
+    });
+
+    const ticketSelected = Array.from(ticketType).some(input => input.checked);
+    if (ticketSelected) filledFields++;
+
+    const progress = (filledFields / totalFields) * 100;
+    progressFill.style.width = `${progress}%`;
+  }
+
+  fields.forEach(field => {
+    const input = document.getElementById(field);
+    input.addEventListener('input', updateProgress);
+    input.addEventListener('change', () => validateField(field));
+  });
+
+  ticketType.forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.getElementById('ticket-error').textContent = '';
+      updateProgress();
+    });
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+
+    fields.forEach(field => {
+      if (!validateField(field)) valid = false;
+    });
+
+    const ticketSelected = Array.from(ticketType).some(input => input.checked);
+    if (!ticketSelected) {
+      document.getElementById('ticket-error').textContent = 'Please select a ticket type.';
+      valid = false;
+    }
+
+    if (valid) {
+      confirmationModal.classList.add('show');
+      // Simulate form submission (remove in production)
+      setTimeout(() => {
+        form.submit();
+      }, 2000);
+    }
+  });
+
+  confirmationClose.addEventListener('click', () => confirmationModal.classList.remove('show'));
+  confirmationOk.addEventListener('click', () => confirmationModal.classList.remove('show'));
+
+  // Image Modal Handling
+  const imageModal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalClose = document.getElementById('modal-close');
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      modalImage.src = item.dataset.modalImg;
+      imageModal.classList.add('show');
+    });
+  });
+
+  modalClose.addEventListener('click', () => imageModal.classList.remove('show'));
+
+  // Back to Top Button
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+</script>
 </body>
 </html>
