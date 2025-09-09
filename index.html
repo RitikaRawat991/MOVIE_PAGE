@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
   <meta property="og:title" content="Patriotic Indian War Films – HTML + CSS Showcase" />
   <meta property="og:description" content="Explore Shershaah, Uri, and Border with trailers, soundtracks, galleries, forms, and CSS effects." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROMAhBE2ci2IuUWQcCytXornYks9KeqUfd4g&s" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -346,189 +345,6 @@
     }
     .splide__arrow:hover { background: var(--accent-2); }
     .splide__pagination__page.is-active { background: var(--accent-2); }
-
-    /* Form Enhancements */
-    .form-group {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 16px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-      margin-bottom: 16px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .form-group:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px var(--shadow);
-    }
-    .form-label {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      color: var(--text);
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-    .input-group {
-      position: relative;
-      margin-bottom: 12px;
-    }
-    .input-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: var(--bg-alt);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .input-wrapper:focus-within {
-      border-color: var(--ring);
-      box-shadow: 0 0 8px var(--ring);
-    }
-    .input-icon {
-      padding: 0 12px;
-      color: var(--muted);
-      font-size: 1.2rem;
-    }
-    input, select, textarea {
-      flex: 1;
-      border: none;
-      background: transparent;
-      padding: 12px;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-    }
-    .radio-label, .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px;
-      border-radius: 8px;
-      background: var(--card);
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .radio-label:hover, .checkbox-label:hover {
-      background: var(--bg-alt);
-      transform: translateY(-2px);
-    }
-    .radio-label input, .checkbox-label input {
-      margin: 0;
-    }
-    .error-message {
-      color: var(--accent);
-      font-size: 0.85rem;
-      margin-top: 4px;
-      display: block;
-      min-height: 20px;
-    }
-    .progress-bar {
-      height: 6px;
-      background: var(--bg-alt);
-      border-radius: 3px;
-      overflow: hidden;
-      margin: 16px 0;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      transition: width 0.5s ease;
-    }
-    .btn {
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-      border: none;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: var(--bg);
-    }
-    .btn-secondary {
-      background: var(--bg-alt);
-      color: var(--text);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .btn-tertiary {
-      background: var(--card);
-      color: var(--accent-2);
-      border: 1px dashed var(--ring);
-    }
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px var(--shadow);
-    }
-    .form-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-    }
-    /* Confirmation Modal */
-    .confirmation-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 101;
-      align-items: center;
-      justify-content: center;
-    }
-    .confirmation-modal.show {
-      display: flex;
-    }
-    .confirmation-content {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 10px 40px var(--shadow);
-      position: relative;
-      animation: slideIn 0.5s ease;
-    }
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .confirmation-close {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-size: 24px;
-      color: var(--text);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .confirmation-close:hover {
-      transform: rotate(90deg);
-    }
-    .confirmation-content h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      color: var(--accent-2);
-      margin: 0 0 16px;
-    }
-    .confirmation-content p {
-      color: var(--muted);
-      margin: 0 0 20px;
-    }
-    .confirmation-content .btn {
-      display: inline-block;
-      width: auto;
-    }
   </style>
 </head>
 <body>
@@ -1091,7 +907,7 @@
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Sunny Deol in action</p>
           </div>
           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=TB1W2B90uB0aLg4WnbuTtLvxZhi-PrNN7RqA&s" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1W2B90uB0aLg4WnbuTtLvxZhi-PrNN7RqA&s" alt="Award moment" style="width:100%; height:160px; object-fit:cover; border:6px solid transparent; border-image: linear-gradient(45deg,#ffd700,#ff3d00) 1; padding:5px; box-shadow:0 8px 20px rgba(0,0,0,0.5); transition:transform .4s, box-shadow .4s; cursor:pointer;" data-modal-img="https://filmfare.wwmindia.com/content/2020/jun/border1591005476.jpg">
             <p class="caption" style="margin-top:8px; font-size:0.95rem; color:var(--muted);">Award Moment</p>
           </div>
           <div class="gallery-item" style="flex:1 1 250px; max-width:260px;">
@@ -1124,252 +940,110 @@
     </div>
   </section>
 
-<!-- Ticket Form Section (Continued) -->
-<fieldset class="form-group">
-  <legend class="fancy">Personal Details</legend>
-  <div class="input-group">
-    <label for="name" class="form-label">Full Name</label>
-    <div class="input-wrapper">
-      <span class="input-icon">👤</span>
-      <input type="text" id="name" name="entry.1234567890" placeholder="Enter your name" required />
+  <!-- Ticket Form Section -->
+  <section id="form">
+    <div class="container">
+      <div class="card">
+        <h2>Ticket Booking Form</h2>
+        <form id="ticketForm" action=" https://docs.google.com/forms/d/e/1FAIpQLSeEZHW6xE25dbYTeX-IdvB3PLTHn7o14mtOmXXaJd_jJiD-CA/formResponse" method="POST">
+          <label for="name">Enter your name</label>
+          <input type="text" id="name" name="entry.28370469" value="Ritika" required />
+
+          <label for="email">Enter your email</label>
+          <input type="email" id="email" name="entry.1767467742" value="abc@gmail.com" required />
+
+          <label for="phone">Enter your phone no</label>
+          <input type="tel" id="phone" name="entry.628024406" value="+916783452376" required />
+
+      <label>Choose a movie</label>
+      <div class="radio-group">
+        <label><input type="radio" id="movieShershaah" name="entry.2109171717" value="Shershaah" required> Shershaah</label>
+        <label><input type="radio" id="movieUri" name="entry.2109171717" value="Uri"> Uri</label>
+        <label><input type="radio" id="movieBorder" name="entry.2109171717" value="Border"> Border</label>
+        <label><input type="radio" id="movieLakshya" name="entry.2109171717" value="Lakshya"> Lakshya</label>
+      </div>
+
+     <label>Ticket type</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="ticketTypeStandard" name="entry.1697382819" value="Standard"> Standard</label>
+        <label><input type="checkbox" id="ticketTypePremium" name="entry.1697382819" value="Premium"> Premium</label>
+      </div>
+          <label for="seats">Number of seats</label>
+          <input type="number" id="seats" name="entry.2145244739" value="2" min="1" required />
+
+          <label for="specialRequests">Special requests</label>
+          <textarea id="specialRequests" name="entry.1424321180" placeholder="Enter any special requests..."></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+        <p id="formMessage" class="muted mt-2" style="display:none;">Form submitted successfully!</p>
+      </div>
     </div>
-    <span class="error-message" id="name-error"></span>
+  </section>
+
+  <!-- Modal for Image Preview -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img src="" alt="Modal Image">
   </div>
-  <div class="input-group">
-    <label for="email" class="form-label">Email Address</label>
-    <div class="input-wrapper">
-      <span class="input-icon">📧</span>
-      <input type="email" id="email" name="entry.987654321" placeholder="Enter your email" required />
-    </div>
-    <span class="error-message" id="email-error"></span>
-  </div>
-  <div class="input-group">
-    <label for="phone" class="form-label">Phone Number</label>
-    <div class="input-wrapper">
-      <span class="input-icon">📱</span>
-      <input type="tel" id="phone" name="entry.456789123" placeholder="Enter your phone number" pattern="[0-9]{10}" />
-    </div>
-    <span class="error-message" id="phone-error"></span>
-  </div>
-</fieldset>
 
-<fieldset class="form-group">
-  <legend class="fancy">Movie Selection</legend>
-  <div class="input-group">
-    <label for="movie" class="form-label">Choose a Movie</label>
-    <div class="input-wrapper">
-      <span class="input-icon">🎬</span>
-      <select id="movie" name="entry.1122334455" required>
-        <option value="" disabled selected>Select a movie</option>
-        <option value="Shershaah">Shershaah (2021)</option>
-        <option value="Uri">Uri: The Surgical Strike (2019)</option>
-        <option value="Border">Border (1997)</option>
-        <option value="Lakshya">Lakshya (2004)</option>
-      </select>
-    </div>
-    <span class="error-message" id="movie-error"></span>
-  </div>
-  <div class="input-group">
-    <label class="form-label">Ticket Type</label>
-    <div class="radio-label">
-      <input type="radio" id="standard" name="entry.6677889900" value="Standard" required />
-      <label for="standard">Standard</label>
-    </div>
-    <div class="radio-label">
-      <input type="radio" id="premium" name="entry.6677889900" value="Premium" />
-      <label for="premium">Premium</label>
-    </div>
-    <span class="error-message" id="ticket-error"></span>
-  </div>
-</fieldset>
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTop" title="Back to Top">↑</a>
 
-<fieldset class="form-group">
-  <legend class="fancy">Additional Preferences</legend>
-  <div class="input-group">
-    <label for="seats" class="form-label">Number of Seats</label>
-    <div class="input-wrapper">
-      <span class="input-icon">💺</span>
-      <input type="number" id="seats" name="entry.2233445566" min="1" max="10" placeholder="1-10" required />
-    </div>
-    <span class="error-message" id="seats-error"></span>
-  </div>
-  <div class="input-group">
-    <label for="comments" class="form-label">Special Requests</label>
-    <textarea id="comments" name="entry.3344556677" placeholder="Any special requests (e.g., accessibility needs)"></textarea>
-  </div>
-</fieldset>
+  <footer class="container" style="padding:28px 0; color:var(--muted)">
+    &copy; <span id="year"></span> Patriotic War Films Study Demo
+  </footer>
 
-<div class="form-actions">
-  <button type="submit" class="btn btn-primary">Book Tickets</button>
-  <button type="reset" class="btn btn-secondary">Reset Form</button>
-</div>
-</form>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- Confirmation Modal -->
-<div class="confirmation-modal" id="confirmation-modal">
-  <div class="confirmation-content">
-    <span class="confirmation-close" id="confirmation-close">&times;</span>
-    <h3>Booking Confirmed!</h3>
-    <p>Your tickets have been reserved successfully. You'll receive a confirmation email with details shortly.</p>
-    <button class="btn btn-primary" id="confirmation-ok">OK</button>
-  </div>
-</div>
-</div>
-</div>
-</section>
+    // Initialize Splide carousels
+    new Splide('#splide-shershaah', { type: 'loop', perPage: 2, gap: '1rem', breakpoints: { 900: { perPage: 1 } } }).mount();
+    new Splide('#splide-uri', { type: 'loop', perPage: 2, gap: '1rem', breakpoints: { 900: { perPage: 1 } } }).mount();
+    new Splide('#splide-border', { type: 'loop', perPage: 2, gap: '1rem', breakpoints: { 900: { perPage: 1 } } }).mount();
 
-<!-- Modal for Gallery Images -->
-<div class="modal" id="image-modal">
-  <span class="modal-close" id="modal-close">&times;</span>
-  <img id="modal-image" src="" alt="Enlarged Image" />
-</div>
-
-<!-- Back to Top Button -->
-<a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M12 19V5m-7 7l7-7 7 7" />
-  </svg>
-</a>
-
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<script>
-  // Initialize Splide carousels
-  document.addEventListener('DOMContentLoaded', () => {
-    new Splide('#splide-shershaah', {
-      type: 'loop',
-      perPage: 2,
-      gap: '1rem',
-      breakpoints: { 900: { perPage: 1 } }
-    }).mount();
-    new Splide('#splide-uri', {
-      type: 'loop',
-      perPage: 2,
-      gap: '1rem',
-      breakpoints: { 900: { perPage: 1 } }
-    }).mount();
-    new Splide('#splide-border', {
-      type: 'loop',
-      perPage: 2,
-      gap: '1rem',
-      breakpoints: { 900: { perPage: 1 } }
-    }).mount();
-  });
-
-  // Form Validation and Progress Bar
-  const form = document.getElementById('booking');
-  const progressFill = document.querySelector('.progress-fill');
-  const confirmationModal = document.getElementById('confirmation-modal');
-  const confirmationClose = document.getElementById('confirmation-close');
-  const confirmationOk = document.getElementById('confirmation-ok');
-
-  const fields = ['name', 'email', 'phone', 'movie', 'seats'];
-  const ticketType = document.querySelectorAll('input[name="entry.6677889900"]');
-
-  function validateField(field) {
-    const input = document.getElementById(field);
-    const error = document.getElementById(`${field}-error`);
-    let valid = true;
-
-    if (field === 'name') {
-      valid = input.value.trim().length >= 2;
-      error.textContent = valid ? '' : 'Name must be at least 2 characters.';
-    } else if (field === 'email') {
-      valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
-      error.textContent = valid ? '' : 'Please enter a valid email.';
-    } else if (field === 'phone') {
-      valid = input.value === '' || /^[0-9]{10}$/.test(input.value);
-      error.textContent = valid ? '' : 'Phone number must be 10 digits.';
-    } else if (field === 'movie') {
-      valid = input.value !== '';
-      error.textContent = valid ? '' : 'Please select a movie.';
-    } else if (field === 'seats') {
-      valid = input.value >= 1 && input.value <= 10;
-      error.textContent = valid ? '' : 'Seats must be between 1 and 10.';
-    }
-
-    return valid;
-  }
-
-  function updateProgress() {
-    const totalFields = fields.length + 1; // Include ticket type
-    let filledFields = 0;
-
-    fields.forEach(field => {
-      const input = document.getElementById(field);
-      if (field === 'phone' && input.value === '') return; // Optional
-      if (validateField(field)) filledFields++;
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
     });
 
-    const ticketSelected = Array.from(ticketType).some(input => input.checked);
-    if (ticketSelected) filledFields++;
-
-    const progress = (filledFields / totalFields) * 100;
-    progressFill.style.width = `${progress}%`;
-  }
-
-  fields.forEach(field => {
-    const input = document.getElementById(field);
-    input.addEventListener('input', updateProgress);
-    input.addEventListener('change', () => validateField(field));
-  });
-
-  ticketType.forEach(radio => {
-    radio.addEventListener('change', () => {
-      document.getElementById('ticket-error').textContent = '';
-      updateProgress();
+    // Modal for Image Preview
+    const modal = document.getElementById('imageModal');
+    const modalImg = modal.querySelector('img');
+    const modalClose = modal.querySelector('.modal-close');
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.dataset.modalImg;
+        modal.classList.add('show');
+      });
     });
-  });
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let valid = true;
-
-    fields.forEach(field => {
-      if (!validateField(field)) valid = false;
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
     });
 
-    const ticketSelected = Array.from(ticketType).some(input => input.checked);
-    if (!ticketSelected) {
-      document.getElementById('ticket-error').textContent = 'Please select a ticket type.';
-      valid = false;
-    }
+    // Form Submission Handling
+    const ticketForm = document.getElementById('ticketForm');
+    const formMessage = document.getElementById('formMessage');
+    ticketForm.addEventListener('submit', async (e) => {
 
-    if (valid) {
-      confirmationModal.classList.add('show');
-      // Simulate form submission (remove in production)
+      console.log('Form submitted to Google Forms');
       setTimeout(() => {
-        form.submit();
-      }, 2000);
-    }
-  });
-
-  confirmationClose.addEventListener('click', () => confirmationModal.classList.remove('show'));
-  confirmationOk.addEventListener('click', () => confirmationModal.classList.remove('show'));
-
-  // Image Modal Handling
-  const imageModal = document.getElementById('image-modal');
-  const modalImage = document.getElementById('modal-image');
-  const modalClose = document.getElementById('modal-close');
-  const galleryItems = document.querySelectorAll('.gallery-item img');
-
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      modalImage.src = item.dataset.modalImg;
-      imageModal.classList.add('show');
+        formMessage.style.display = 'block';
+        ticketForm.reset(); // Reset form after submission
+      }, 500); // Delay to ensure submission is processed
     });
-  });
-
-  modalClose.addEventListener('click', () => imageModal.classList.remove('show'));
-
-  // Back to Top Button
-  const backToTop = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-</script>
+  </script>
 </body>
 </html>
