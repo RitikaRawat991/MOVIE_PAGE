@@ -347,6 +347,7 @@
     .splide__pagination__page.is-active { background: var(--accent-2); }
   </style>
 </head>
+<iframe id="sub" name="sub" style="display:none;" onload="if(subs){window.location='end.html';}"></iframe>
 <body>
   <header>
     <div class="container">
@@ -945,7 +946,7 @@
     <div class="container">
       <div class="card">
         <h2>Ticket Booking Form</h2>
-        <form id="ticketForm" action=" https://docs.google.com/forms/d/e/1FAIpQLSeEZHW6xE25dbYTeX-IdvB3PLTHn7o14mtOmXXaJd_jJiD-CA/formResponse" method="POST">
+        <form id="ticketForm" action=" https://docs.google.com/forms/d/e/1FAIpQLSeEZHW6xE25dbYTeX-IdvB3PLTHn7o14mtOmXXaJd_jJiD-CA/formResponse" method="POST" target="sub" onsubmit="subs=true">
           <label for="name">Enter your name</label>
           <input type="text" id="name" name="entry.28370469" value="Ritika" required />
 
@@ -957,7 +958,7 @@
 
       <label>Choose a movie</label>
       <div class="radio-group">
-        <label><input type="radio" id="movieShershaah" name="entry.2109171717" value="Shershaah" required> Shershaah</label>
+        <label><input type="radio" id="movieShershaah" name="entry.2109171717" value="Sheershah" required> Shershaah</label>
         <label><input type="radio" id="movieUri" name="entry.2109171717" value="Uri"> Uri</label>
         <label><input type="radio" id="movieBorder" name="entry.2109171717" value="Border"> Border</label>
         <label><input type="radio" id="movieLakshya" name="entry.2109171717" value="Lakshya"> Lakshya</label>
@@ -965,8 +966,8 @@
 
      <label>Ticket type</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" id="ticketTypeStandard" name="entry.1697382819" value="Standard"> Standard</label>
-        <label><input type="checkbox" id="ticketTypePremium" name="entry.1697382819" value="Premium"> Premium</label>
+        <label><input type="checkbox" id="ticketTypeStandard" name="entry.1697382819" value="standard"> Standard</label>
+        <label><input type="checkbox" id="ticketTypePremium" name="entry.1697382819" value="premiium"> Premium</label>
       </div>
           <label for="seats">Number of seats</label>
           <input type="number" id="seats" name="entry.2145244739" value="2" min="1" required />
@@ -995,6 +996,9 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  var subs=False;
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
     // Set current year in footer
