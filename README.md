@@ -10,10 +10,6 @@ A dynamic and visually appealing **Movie Page** web application that displays po
 - [Features](#features)  
 - [Demo](#demo)  
 - [Technologies Used](#technologies-used)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ---
 
@@ -35,24 +31,17 @@ The Movie Page project is a **responsive web application** that fetches movie da
 
 ## Demo
 
-![Movie Page Screenshot](screenshot.png)  
+![Movie Page Screenshot](newp.png)  
 *Screenshot of the Movie Page UI*  
 
-**Live Demo:** [Your Demo Link Here](https://your-demo-link.com)
+**Live Demo:** [Your Demo Link Here](https://ritikarawat991.github.io/MOVIE_PAGE/)
 
 ---
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **API:** [The Movie Database (TMDb) API](https://www.themoviedb.org/)  
-- **Optional Libraries:** Bootstrap / Tailwind CSS / jQuery (if used)  
+- **Frontend:** HTML, CSS   
+- **Optional Libraries:** Bootstrap / Tailwind CSS / Splide Js / Particle JS  
 
 ---
 
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/movie-page.git
