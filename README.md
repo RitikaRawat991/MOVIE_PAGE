@@ -1,6 +1,6 @@
 # Movie Page Project
 
-A dynamic and visually appealing **Movie Page** web application that displays popular movies, their details, and trailers. This project demonstrates modern web development skills including **HTML, CSS and JavaScript**.
+A dynamic and visually appealing **Movie Page** web application that displays popular movies, their details, and trailers. This project demonstrates modern web development skills including **HTML, CSS, and JavaScript**.
 
 ---
 
@@ -31,18 +31,16 @@ The Movie Page project is a **responsive web application** that fetches movie da
 
 ## Demo
 
-![Movie Page Screenshot](![Uploading Screenshot (963).png…]()
-)  
+![Movie Page Screenshot](newn.jpg)  
 *Screenshot of the Movie Page UI*  
 
-**Live Demo:** [Your Demo Link Here](https://ritikarawat991.github.io/MOVIE_PAGE/)
+**Live Demo:** [Movie Page Demo](https://ritikarawat991.github.io/MOVIE_PAGE/)
 
 ---
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS   
-- **Optional Libraries:** Bootstrap / Tailwind CSS / Splide Js / Particle JS  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Optional Libraries:** Bootstrap / Tailwind CSS / Splide.js / Particles.js  
 
 ---
-
