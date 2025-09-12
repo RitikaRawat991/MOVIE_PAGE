@@ -31,7 +31,8 @@ The Movie Page project is a **responsive web application** that fetches movie da
 
 ## Demo
 
-![Movie Page Screenshot](Screenshot (963).png)  
+![Movie Page Screenshot](![Uploading Screenshot (963).png…]()
+)  
 *Screenshot of the Movie Page UI*  
 
 **Live Demo:** [Your Demo Link Here](https://ritikarawat991.github.io/MOVIE_PAGE/)
