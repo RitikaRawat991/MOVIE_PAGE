@@ -48,6 +48,93 @@
       align-items: center;
       flex-wrap: wrap;
     }
+    /* Headings Style */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-2), #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+/* ================= MOVIE INFO SECTION ================= */
+.movie-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.info-card:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: translateX(-60px);
+}
+
+.info-card:nth-child(3) {
+  animation-delay: 0.4s;
+  transform: translateX(60px);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.5);
+}
+
+.info-card h3 {
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animated gradient shine */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Underline effect for section titles (like Gallery, Soundtrack, Trailer) */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-2);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
 
     .brand {
       font-family: 'Bebas Neue', sans-serif;
@@ -75,13 +162,13 @@
     }
 
     /* Hero */
-    .hero {
+     .hero {
       padding: 2rem 1rem;
       text-align: center;
       position: relative;
       color: #fff;
       z-index: 1;
-      background: url('https://upload.wikimedia.org/wikipedia/en/1/12/Shershaah_film_poster.jpg') center/cover no-repeat;
+      background: url('https://media-cache.cinematerial.com/p/500x/hkdm5mqj/shershaah-indian-movie-poster.jpg?v=1579161891') center/cover no-repeat;
       background-blend-mode: multiply;
       background-color: rgba(5, 12, 24, 0.75);
       min-height: 320px;
@@ -123,12 +210,14 @@
       border-radius: var(--radius);
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: transform 0.3s, background 0.3s;
       margin: 0.5rem 0.5rem 0 0;
     }
     .cta:hover {
       background: #e63200;
+      transform: scale(1.05);
     }
+
 
     .grid {
       display: grid;
@@ -209,29 +298,30 @@
   </main>
 
   <!-- INFO GRID -->
-  <section class="grid cols-3" style="margin:2rem;">
-    <div class="card">
-      <h3>Release</h3>
-      <p class="muted">2021</p>
-    </div>
-    <div class="card">
-      <h3>Awards</h3>
-      <p class="muted">Filmfare & National Awards etc.</p>
-    </div>
-    <div class="card">
-      <h3>Lead</h3>
-      <p class="muted">Sidharth Malhotra</p>
-    </div>
-  </section>
+ <section class="movie-info">
+  <div class="info-card">
+    <h3>Release Date</h3>
+    <p>12 August 2021</p>
+  </div>
+  <div class="info-card">
+    <h3>Awards</h3>
+    <p>National Film Award for Best Feature Film</p>
+  </div>
+  <div class="info-card">
+    <h3>Lead Actors</h3>
+    <p>Sidharth Malhotra, Kiara Advani</p>
+  </div>
+</section>
+
 
   <!-- GALLERY (Swiper) -->
   <section style="margin:2rem;">
     <h2>Gallery</h2>
     <div class="swiper gallery-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/M/MV5BMTU4NTdmZjktNjcxZi00ZDczLTg5ZWEtMmU5ZDkzNGEzOGMxXkEyXkFqcGdeQXVyMTIzOTMzNzQw._V1_.jpg" alt="Shershaah Poster"></div>
+        <div class="swiper-slide"><img src="https://etvbharatimages.akamaized.net/etvbharat/prod-images/5727921_s1.jpg" alt="Shershaah Poster"></div>
         <div class="swiper-slide"><img src="https://www.bollywoodhungama.com/wp-content/uploads/2021/07/Shershaah-6.jpg" alt="Shershaah Scene"></div>
-        <div class="swiper-slide"><img src="https://filmfare.wwmindia.com/thumb/content/2021/aug/shershaah41628549849.jpg?width=1200&height=900" alt="Sidharth & Kiara"></div>
+        <div class="swiper-slide"><img src="https://i.pinimg.com/736x/fc/6f/3c/fc6f3c285f012f3cdd19adfdd1654d2f.jpg" alt="Sidharth & Kiara"></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
@@ -258,11 +348,18 @@
 
   <!-- TRAILER -->
   <section class="card" style="margin:2rem;" id="trailer">
-    <h2>Official Trailer</h2>
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);">
-      <iframe src="https://www.youtube.com/embed/P0D9z6kkjBE" title="Shershaah Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
-    </div>
-  </section>
+  <h2>Official Trailer</h2>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+    <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/Q0FTXnefVBA" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen 
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+    </iframe>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
