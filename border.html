@@ -32,6 +32,90 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+    /* Headings Style */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-2), #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+.movie-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.info-card:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: translateX(-60px);
+}
+
+.info-card:nth-child(3) {
+  animation-delay: 0.4s;
+  transform: translateX(60px);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.5);
+}
+
+.info-card h3 {
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Animated gradient shine */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Underline effect for section titles (like Gallery, Soundtrack, Trailer) */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-2);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-2);
+}
 
     header {
       background: var(--bg-alt);
@@ -222,22 +306,22 @@
       <a class="cta" href="#trailer">Watch Trailer</a>
       <a class="cta" href="#soundtrack">Listen Soundtrack</a>
     </div>
+</main>
 
-    <!-- Quick Info -->
-    <section class="grid cols-3 mt-4" style="margin-top: 2rem;">
-      <div class="card">
-        <h3>Release</h3>
-        <p class="muted">1997</p>
-      </div>
-      <div class="card">
-        <h3>Awards</h3>
-        <p class="muted">National Integration</p>
-      </div>
-      <div class="card">
-        <h3>Lead</h3>
-        <p class="muted">Sunny Deol</p>
-      </div>
-    </section>
+    <section class="movie-info">
+  <div class="info-card">
+    <h3>Released In</h3>
+    <p> 1997</p>
+  </div>
+  <div class="info-card">
+    <h3>Awards</h3>
+    <p>National Integration </p>
+  </div>
+  <div class="info-card">
+    <h3>Lead Actors</h3>
+    <p>Sunny Deol,Suniel Shetty, and Akshaye Khanna</p>
+  </div>
+</section>
      <section style="margin:2rem;" id="soundtrack">
     <h2>Soundtrack</h2>
     <div id="soundtrack-slider" class="splide">
@@ -251,6 +335,7 @@
       </div>
     </div>
   </section>
+  
     <!-- Gallery -->
     <section style="margin: 2rem 0;">
       <h2>Gallery</h2>
@@ -312,7 +397,7 @@
         Your browser does not support the audio element.
       </audio>
     </section>
-  </main>
+  
 
   <!-- Footer -->
   <footer>
@@ -337,6 +422,7 @@
         900: { slidesPerView: 3 }
       }
     });
+    
   </script>
 </body>
 </html>
