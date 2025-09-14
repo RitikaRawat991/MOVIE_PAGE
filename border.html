@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Border (1997)</title>
+  <meta name="description" content="Border (1997) – About, tech sheet, trailer, soundtrack, characters and gallery." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --bg: #050c18;
+      --bg-alt: #0d1a2e;
+      --text: #f5faff;
+      --muted: #cfe2ff;
+      --card: #0f1e36;
+      --accent: #ff3d00;
+      --accent-2: #ffd700;
+      --radius: 12px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    /* Headings Style */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-2), #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+.movie-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.info-card:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: translateX(-60px);
+}
+
+.info-card:nth-child(3) {
+  animation-delay: 0.4s;
+  transform: translateX(60px);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.5);
+}
+
+.info-card h3 {
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Animated gradient shine */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Underline effect for section titles (like Gallery, Soundtrack, Trailer) */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-2);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
+    header {
+      background: var(--bg-alt);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--accent-2);
+    }
+
+    .navlinks {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .navlinks a:hover {
+      color: var(--accent-2);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url('https://upload.wikimedia.org/wikipedia/en/9/9c/Border1997.jpg') center/cover no-repeat;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-card h1 {
+      font-size: 2.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      margin: 0.5rem 0.5rem 0 0;
+    }
+
+    .cta:hover {
+      background: #e63200;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    /* Gallery Images */
+    .gallery-swiper img,
+    .characters-swiper img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-swiper img:hover,
+    .characters-swiper img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Character Overlay */
+    .character-overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      width: 100%;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .character-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cols-2,
+      .cols-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero-card h1 {
+        font-size: 1.6rem;
+      }
+      .brand {
+        font-size: 1.4rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--bg-alt);
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="brand">PATRIOTIC WAR FILMS</div>
+      <ul class="navlinks" role="list">
+        <li><a href="./index.html#home">Home</a></li>
+        <li><a href="./shershaah.html">Shershaah</a></li>
+        <li><a href="./uri.html">Uri</a></li>
+        <li><a href="./border.html">Border</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero" id="border">
+    <div class="hero-card">
+      <h1>Border (1997)</h1>
+      <p class="muted">A heroic stand at the Battle of Longewala</p>
+      <a class="cta" href="#trailer">Watch Trailer</a>
+      <a class="cta" href="#soundtrack">Listen Soundtrack</a>
+    </div>
+</main>
+
+    <section class="movie-info">
+  <div class="info-card">
+    <h3>Released In</h3>
+    <p> 1997</p>
+  </div>
+  <div class="info-card">
+    <h3>Awards</h3>
+    <p>National Integration </p>
+  </div>
+  <div class="info-card">
+    <h3>Lead Actors</h3>
+    <p>Sunny Deol,Suniel Shetty, and Akshaye Khanna</p>
+  </div>
+</section>
+     <section style="margin:2rem;" id="soundtrack">
+    <h2>Soundtrack</h2>
+    <div id="soundtrack-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=yccGxvIydKg" target="_blank" rel="noopener">Sandese Aate Hain</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=2k1Y0qJ7o7Q" target="_blank" rel="noopener">Mere Dushman Mere Bhai</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=8rFk5ACB2lY" target="_blank" rel="noopener">Ke Ghar Kab Ayenge</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=2k1Y0qJ7o7Q" target="_blank" rel="noopener">Mere Dushman Mere Bhai</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Gallery -->
+    <section style="margin: 2rem 0;">
+      <h2>Gallery</h2>
+      <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="character-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-vFZBgzfbVo_GHzllRDD_gd_aTpK90LWUxQ&s" alt="Border Poster" loading="lazy" />
+              <div class="character-overlay">
+                <h3>Poster</h3>
+                <p>Border</p>
+                <div class="character-quirk">1997</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="character-image">
+              <img src="https://i.ytimg.com/vi/igvtlKne6rg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDbFLhnbvHrPl7zChzjJ0rDnNE3bw" alt="Sunny Deol" loading="lazy" />
+              <div class="character-overlay">
+                <h3>Sunny Deol</h3>
+                <p>Maj. Kuldip Singh</p>
+                <div class="character-quirk">Lead Role</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="character-image">
+              <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/06/pjimage-2021-06-13t225328-1623604773.jpg" alt="Milind Soman" loading="lazy" />
+              <div class="character-overlay">
+                <h3>Milind Soman</h3>
+                <p>Capt. Bhairon Singh</p>
+                <div class="character-quirk">Supporting Role</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Trailer Section -->
+     <section class="card" style="margin:2rem;" id="trailer">
+    <h2>Official Trailer</h2>
+    <div style="position:relative;padding-bottom:56.25%;height:0;">
+      <iframe src="https://www.youtube.com/embed/GbIWRGpx3e8" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+    </div>
+  </section>
+
+    <!-- Soundtrack Section -->
+    <section id="soundtrack" style="margin: 2rem 0;">
+      <h2>Soundtrack</h2>
+      <audio controls style="width: 100%; max-width: 600px; border-radius: 12px;">
+        <source src="ke-ghar-kab-aaoge-bari-2839.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+  
+
+  <!-- Footer -->
+ <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">&copy; <span id="year"></span> Patriotic War Films| Designed by Ritika Rawat</div>
+      <div class="footer-right">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#ticket-booking">Book Tickets</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const gallerySwiper = new Swiper('.gallery-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 15,
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        640: { slidesPerView: 2 },
+        900: { slidesPerView: 3 }
+      }
+    });
+    
+  </script>
+</body>
+</html>

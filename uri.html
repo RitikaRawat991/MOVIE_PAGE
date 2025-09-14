@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uri: The Surgical Strike (2019)</title>
+  <meta name="description" content="Uri (2019) – About, tech sheet, trailer, soundtrack, characters and gallery." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <!-- Swiper & Splide CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+
+  <style>
+    :root {
+      --bg: #050c18;
+      --bg-alt: #0d1a2e;
+      --text: #f5faff;
+      --muted: #cfe2ff;
+      --card: #0f1e36;
+      --accent: #ff3d00;
+      --accent-2: #ffd700;
+      --radius: 12px;
+    }
+    /* Headings Style */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-2), #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+/* Animated gradient shine */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Underline effect for section titles (like Gallery, Soundtrack, Trailer) */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-2);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--bg-alt);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--accent-2);
+    }
+
+    .navlinks {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      transition: color .3s;
+    }
+    .navlinks a:hover { color: var(--accent-2); }
+
+    /* Hero */
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      color: #fff;
+      z-index: 1;
+      background: url('https://upload.wikimedia.org/wikipedia/en/3/3b/URI_-_New_poster.jpg') center/cover no-repeat;
+      background-blend-mode: multiply;
+      background-color: rgba(5, 12, 24, 0.75);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #tsparticles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+      z-index: 0;
+    }
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero-card h1 {
+      font-size: 2.2rem;
+      margin: 0.5rem 0;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .cta {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .3s;
+      margin: 0.5rem 0.5rem 0 0;
+    }
+    .cta:hover { background: #e63200; }
+
+    /* Grid System */
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .cols-2 { grid-template-columns: repeat(2,1fr); }
+    .cols-3 { grid-template-columns: repeat(3,1fr); }
+
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    /* Gallery Images Equal Size */
+    .gallery-swiper img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-swiper img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cols-3 { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 640px) {
+      .cols-2, .cols-3 { grid-template-columns: 1fr; }
+      .hero-card h1 { font-size: 1.6rem; }
+      .brand { font-size: 1.4rem; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--bg-alt);
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    /* ================= MOVIE INFO SECTION ================= */
+.movie-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.info-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slideIn 0.8s ease forwards;
+}
+
+.info-card:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: translateX(-60px);
+}
+
+.info-card:nth-child(3) {
+  animation-delay: 0.4s;
+  transform: translateX(60px);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.5);
+}
+
+.info-card h3 {
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="brand">PATRIOTIC WAR FILMS</div>
+      <ul class="navlinks" role="list">
+        <li><a href="./index.html#home">Home</a></li>
+        <li><a href="./shershaah.html">Shershaah</a></li>
+        <li><a href="./uri.html">Uri</a></li>
+        <li><a href="./border.html">Border</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div id="tsparticles"></div>
+    <div class="hero-card">
+      <h1>Uri: The Surgical Strike (2019)</h1>
+      <p class="muted">Major Vihaan Shergill leads a high-stakes covert operation</p>
+      <a class="cta" href="#trailer">Watch Trailer</a>
+      <a class="cta" href="#soundtrack">Listen Soundtrack</a>
+    </div>
+  </main>
+  <section class="movie-info">
+  <div class="info-card">
+    <h3>Released In</h3>
+    <p> 2019</p>
+  </div>
+  <div class="info-card">
+    <h3>Awards</h3>
+    <p>National Film Award </p>
+  </div>
+  <div class="info-card">
+    <h3>Lead Actors</h3>
+    <p>Vicky Kaushal</p>
+  </div>
+</section>
+
+
+  <!-- GALLERY (Swiper) -->
+  <section style="margin:2rem;">
+    <h2>Gallery</h2>
+    <div class="swiper gallery-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71q6mKXYJQL.jpg" alt="Uri Poster"></div>
+        <div class="swiper-slide"><img src="https://im.rediff.com/movies/2019/jan/10uri20.jpg?w=450&h=450" alt="Action"></div>
+        <div class="swiper-slide"><img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2019/08/uri-vickykaushal-1565399179.jpg" alt="Awards"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- SOUNDTRACK (Splide) -->
+  <section style="margin:2rem;" id="soundtrack">
+    <h2>Soundtrack</h2>
+    <div id="soundtrack-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=g62J-8nV5FI" target="_blank" rel="noopener">Challa</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=2n3iW1V-wIE" target="_blank" rel="noopener">Jigra</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=BC2UlVAEwi4" target="_blank" rel="noopener">Beh chla</a></li>
+          <li class="splide__slide"><a href="https://www.youtube.com/watch?v=uTDMVdzIhqQ" target="_blank" rel="noopener">Jagga Jiteya</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+   <section class="card" style="margin:2rem;" id="trailer">
+    <h2>Official Trailer</h2>
+    <div style="position:relative;padding-bottom:56.25%;height:0;">
+      <iframe src="https://www.youtube.com/embed/kftWq7vAkuQ" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+    </div>
+  </section>
+  <section id="soundtrack" style="margin: 2rem 0;">
+      <h2>Soundtrack</h2>
+      <audio controls style="width: 100%; max-width: 600px; border-radius: 12px;">
+        <source src="Jagga Jiteya-Downringtone.com (1).mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">&copy; <span id="year"></span> Patriotic War Films| Designed by Ritika Rawat</div>
+      <div class="footer-right">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#ticket-booking">Book Tickets</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts for swiper and splide -->
+  <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles"></script>
+
+  <script>
+    // Initialize tsParticles for background effect if needed
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      interactivity: {
+        detectsOn: "canvas",
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true,
+        },
+        modes: { repulse: { distance: 100, duration: 0.4 } },
+      },
+      particles: {
+        color: { value: "#ff3d00" },
+        links: { enable: true, color: "#ff3d00" },
+        move: { enable: true, speed: 2 },
+        number: { value: 30 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: 4 },
+      },
+    });
+
+    // Initialize Swiper gallery
+    const swiper = new Swiper('.gallery-swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: { 640: { slidesPerView: 2 }, 900: { slidesPerView: 3 } },
+    });
+
+    // Initialize Splide soundtrack slider
+    new Splide('#soundtrack-slider', {
+      type: 'loop',
+      perPage: 3,
+      gap: '1rem',
+      autoplay: true,
+      pauseOnHover: true,
+      breakpoints: {
+        640: { perPage: 1 },
+        900: { perPage: 2 },
+      },
+    }).mount();
+  </script>
+</body>
+</html>
