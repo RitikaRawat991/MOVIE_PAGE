@@ -11,21 +11,16 @@
   <meta property="og:image" content="https://static.vecteezy.com/system/resources/previews/011/860/696/non_2x/its-movie-time-free-vector.jpg" />
   <meta property="og:image:alt" content="Movie Poster" />
   <meta property="og:site_name" content="Patriotic War Films" />
-
-  <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Fix tsparticles layer */
     #tsparticles {
       position: fixed;
       inset: 0;
       z-index: 0;
     }
-
-    /* Dropdown Styling */
     select {
       width: 100%;
       padding: 12px;
@@ -56,25 +51,20 @@
 
   <header>
   <div class="container nav-container">
-    <!-- Left: Brand -->
     <div class="brand">
       <span class="brand-text">PATRIOTIC WAR FILMS</span>
       <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="Indian Flag" class="flag">
     </div>
-
-    <!-- Right: Navbar Links -->
     <div class="navlinks">
       <a href="#home">Home</a>
       <a href="#explore">Explore</a>
       <a href="#ticket-booking">Ticket Form</a>
     </div>
 
-    <!-- Mobile toggle -->
     <button class="mobile-menu-toggle" aria-label="Toggle navigation menu"></button>
   </div>
 </header>
 
-  <!-- Hero Section -->
   <main id="home" class="hero">
     <div class="container">
       <div class="hero-card">
@@ -96,7 +86,6 @@
     </div>
   </main>
 
-  <!-- Explore Section -->
   <section id="explore" class="characters-slider-section">
     <div class="container">
       <h1 class="section-title">Explore Movies</h1>
@@ -132,8 +121,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Ticket Booking -->
   <section id="ticket-booking">
     <div class="container">
       <div class="form-card">
@@ -183,8 +170,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-left">&copy; <span id="year"></span> Patriotic War Films| Designed by Ritika Rawat</div>
@@ -195,24 +180,17 @@
       </div>
     </div>
   </footer>
-
-  <!-- JS -->
   <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.navlinks');
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       menuToggle.classList.toggle('active');
     });
-
-    // Form handler
     const ticketForm = document.getElementById('ticketForm');
     const formMessage = document.getElementById('formMessage');
     ticketForm.addEventListener('submit', (e) => {
@@ -229,8 +207,6 @@
       formMessage.style.display = 'block';
       setTimeout(() => formMessage.style.display = 'none', 3000);
     });
-
-    // Init sliders + particles
     window.addEventListener('load', () => {
       try { new Swiper('.cta-swiper', { slidesPerView: 1.2, loop: true, autoplay: { delay: 2800 }, breakpoints: { 640: { slidesPerView: 2 }, 900: { slidesPerView: 3 } } }); } catch(e){}
       try { new Splide('#splide-explore', { type: 'loop', perPage: 3, gap: '1rem', autoplay: true, interval: 3200, breakpoints: { 900: { perPage: 2 }, 600: { perPage: 1 } } }).mount(); } catch(e){}
@@ -252,3 +228,4 @@
   </script>
 </body>
 </html>
+
