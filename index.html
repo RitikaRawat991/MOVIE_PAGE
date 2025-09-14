@@ -139,7 +139,7 @@
             <li class="splide__slide">
               <a href="./border.html" class="character-card">
                 <div class="character-image">
-                  <img src="https://m.media-amazon.com/images/M/MV5BNTMyYjI5NjAtNjg1NS00NWIxLTk3ZTQtMjFiOTA3MWI3ZDIxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Border Poster" loading="lazy">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRddHD4x1JlGy526VueG0Rr_ahzPBeNYdg8fw&s" alt="Border Poster" loading="lazy">
                   <div class="character-overlay"><h3>Border</h3><p>1997</p><div class="character-quirk">Longewala</div></div>
                 </div>
               </a>
@@ -205,6 +205,7 @@
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-left">&copy; <span id="year"></span> Patriotic War Films| Designed by Ritika Rawat</div>
+      <p>This is a dummy website your ticket will not get booked in real.</p>
       <div class="footer-right">
         <a href="#home">Home</a>
         <a href="#explore">Explore</a>
@@ -251,20 +252,32 @@
     window.addEventListener('load', () => {
       try { new Swiper('.cta-swiper', { slidesPerView: 1.2, loop: true, autoplay: { delay: 2800 }, breakpoints: { 640: { slidesPerView: 2 }, 900: { slidesPerView: 3 } } }); } catch(e){}
       try { new Splide('#splide-explore', { type: 'loop', perPage: 3, gap: '1rem', autoplay: true, interval: 3200, breakpoints: { 900: { perPage: 2 }, 600: { perPage: 1 } } }).mount(); } catch(e){}
-      if (typeof tsParticles !== 'undefined') {
-        tsParticles.load('tsparticles', {
-          fullScreen: { enable: true },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 50 },
-            move: { enable: true, direction: 'bottom', speed: { min: 2, max: 5 }, outModes: { bottom: 'out' } },
-            shape: { type: 'image', image: [{ src: 'https://cdn-icons-png.flaticon.com/512/786/786973.png', width: 32, height: 32 }] },
-            size: { value: { min: 16, max: 32 } },
-            opacity: { value: { min: 0.6, max: 1 } },
-            rotate: { value: 360, animation: { enable: true, speed: 15 } }
-          }
-        });
-      }
+     if (typeof tsParticles !== 'undefined') {
+  const footer = document.querySelector('footer');
+  const footerHeight = footer.offsetHeight;
+
+  tsParticles.load('tsparticles', {
+    fullScreen: { enable: false }, // Disable fullscreen
+    fpsLimit: 60,
+    style: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: `calc(100vh - ${footerHeight}px)`, // Stop above footer
+      zIndex: 0
+    },
+    particles: {
+      number: { value: 50 },
+      move: { enable: true, direction: 'bottom', speed: { min: 2, max: 5 }, outModes: { bottom: 'out' } },
+      shape: { type: 'image', image: [{ src: 'https://cdn-icons-png.flaticon.com/512/786/786973.png', width: 32, height: 32 }] },
+      size: { value: { min: 16, max: 32 } },
+      opacity: { value: { min: 0.6, max: 1 } },
+      rotate: { value: 360, animation: { enable: true, speed: 15 } }
+    }
+  });
+}
+
     });
   </script>
 </body>
